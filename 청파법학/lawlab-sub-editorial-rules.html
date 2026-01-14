@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>법학연구소 - 편집규정</title>
+  <link href="https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+    }
+
+    /* ========== SUB HERO BANNER ========== */
+    .sub-hero {
+      position: relative;
+      height: 160px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .sub-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .sub-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 40px;
+    }
+
+    .sub-hero-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .sub-hero-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* ========== PAGE HEADER ========== */
+    .page-header {
+      background: white;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .page-title-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .page-title-bar {
+      width: 4px;
+      height: 24px;
+      background: linear-gradient(180deg, #1e40af, #3b82f6);
+      border-radius: 2px;
+    }
+
+    .page-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .breadcrumb a {
+      color: #64748b;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover {
+      color: #1e40af;
+    }
+
+    .breadcrumb svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .breadcrumb-sep {
+      color: #cbd5e1;
+    }
+
+    .breadcrumb-current {
+      color: #1e40af;
+      font-weight: 500;
+    }
+
+    /* ========== CONTENT AREA ========== */
+    .content-wrapper {
+      padding: 32px;
+    }
+
+    .content-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .content-body {
+      padding: 40px;
+    }
+
+    /* Section Header */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #1e40af;
+    }
+
+    .section-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .section-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #1e293b;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    /* Regulations Styles */
+    .regulations {
+      line-height: 1.8;
+    }
+
+    .article {
+      margin-bottom: 28px;
+    }
+
+    .article-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .article-title::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: #1e40af;
+      border-radius: 50%;
+    }
+
+    .article-content {
+      font-size: 14px;
+      color: #475569;
+      padding-left: 14px;
+    }
+
+    .article-content p {
+      margin-bottom: 8px;
+    }
+
+    .article-content .sub-item {
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .article-content .sub-item::before {
+      content: '①';
+      position: absolute;
+      left: 0;
+      color: #64748b;
+    }
+
+    .article-content .sub-item:nth-child(2)::before { content: '②'; }
+    .article-content .sub-item:nth-child(3)::before { content: '③'; }
+    .article-content .sub-item:nth-child(4)::before { content: '④'; }
+    .article-content .sub-item:nth-child(5)::before { content: '⑤'; }
+    .article-content .sub-item:nth-child(6)::before { content: '⑥'; }
+    .article-content .sub-item:nth-child(7)::before { content: '⑦'; }
+
+    .numbered-list {
+      margin-top: 8px;
+    }
+
+    .numbered-list li {
+      margin-bottom: 6px;
+      list-style: none;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .numbered-list li::before {
+      position: absolute;
+      left: 0;
+      color: #1e40af;
+      font-weight: 600;
+    }
+
+    .numbered-list.parentheses li:nth-child(1)::before { content: '(1)'; }
+    .numbered-list.parentheses li:nth-child(2)::before { content: '(2)'; }
+    .numbered-list.parentheses li:nth-child(3)::before { content: '(3)'; }
+    .numbered-list.parentheses li:nth-child(4)::before { content: '(4)'; }
+    .numbered-list.parentheses li:nth-child(5)::before { content: '(5)'; }
+    .numbered-list.parentheses li:nth-child(6)::before { content: '(6)'; }
+    .numbered-list.parentheses li:nth-child(7)::before { content: '(7)'; }
+
+    .inner-list {
+      margin-top: 6px;
+      margin-left: 10px;
+    }
+
+    .inner-list li::before {
+      content: '•' !important;
+      color: #94a3b8;
+    }
+
+    /* Supplementary */
+    .supplementary {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .supplementary-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 10px;
+    }
+
+    .supplementary-content {
+      font-size: 14px;
+      color: #475569;
+      background: #f8fafc;
+      padding: 16px 20px;
+      border-radius: 8px;
+      border-left: 4px solid #1e40af;
+    }
+
+    /* Quick Nav */
+    .quick-nav {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 32px;
+    }
+
+    .quick-nav-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #64748b;
+      margin-bottom: 12px;
+    }
+
+    .quick-nav-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .quick-nav-item {
+      padding: 6px 12px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      font-size: 12px;
+      color: #475569;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .quick-nav-item:hover {
+      background: #1e40af;
+      color: white;
+      border-color: #1e40af;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .sub-hero {
+        height: 120px;
+      }
+
+      .sub-hero-content {
+        padding: 0 20px;
+      }
+
+      .sub-hero-title {
+        font-size: 18px;
+      }
+
+      .page-header {
+        padding: 14px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .content-wrapper {
+        padding: 16px;
+      }
+
+      .content-body {
+        padding: 20px;
+      }
+
+      .quick-nav-list {
+        flex-direction: column;
+      }
+
+      .quick-nav-item {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sub Hero Banner -->
+  <section class="sub-hero">
+    <div class="sub-hero-content">
+      <h1 class="sub-hero-title">전인적 품성과 창의적 지성을 갖춘 글로벌 리더 육성</h1>
+      <p class="sub-hero-desc">세상을 바꾸는 부드러운 힘, 숙명</p>
+    </div>
+  </section>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="page-title-section">
+      <div class="page-title-bar"></div>
+      <h2 class="page-title">편집규정</h2>
+    </div>
+    
+    <nav class="breadcrumb">
+      <a href="/wiz/user/lawlab/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9,22 9,12 15,12 15,22"/>
+        </svg>
+        HOME
+      </a>
+      <span class="breadcrumb-sep">::</span>
+      <a href="#">학술지 청파법학</a>
+      <span class="breadcrumb-sep">&gt;</span>
+      <span class="breadcrumb-current">편집규정</span>
+    </nav>
+  </div>
+
+  <!-- Content Area -->
+  <div class="content-wrapper">
+    
+    <div class="content-card">
+      <div class="content-body">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14,2 14,8 20,8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10,9 9,9 8,9"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="section-title">청파법학 편집규정</h3>
+            <p class="section-subtitle">Editorial Guidelines for Cheongpa Law Review</p>
+          </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="quick-nav">
+          <div class="quick-nav-title">빠른 이동</div>
+          <div class="quick-nav-list">
+            <a href="#art1" class="quick-nav-item">제1조 발행</a>
+            <a href="#art4" class="quick-nav-item">제4조 논문요건</a>
+            <a href="#art5" class="quick-nav-item">제5조 투고·게재</a>
+            <a href="#art8" class="quick-nav-item">제8조 편집위원회</a>
+            <a href="#art10" class="quick-nav-item">제10조 심사절차</a>
+            <a href="#art11" class="quick-nav-item">제11조 심사기준</a>
+            <a href="#art12" class="quick-nav-item">제12조 심사판정</a>
+            <a href="#art15" class="quick-nav-item">제15조 저작권</a>
+          </div>
+        </div>
+
+        <!-- Regulations Content -->
+        <div class="regulations">
+          
+          <div class="article" id="art1">
+            <h4 class="article-title">제 1 조 (발행)</h4>
+            <div class="article-content">
+              <p>이 규정은 숙명여자대학교 법학연구소 (이하 '법학연구소'라 한다)에서 발간하는 학술지를 편집·간행함에 필요한 사항을 정함을 목적으로 한다.</p>
+            </div>
+          </div>
+
+          <div class="article" id="art2">
+            <h4 class="article-title">제 2 조 (제호)</h4>
+            <div class="article-content">
+              <p>학술지의 칭호는 '청파법학'이라 한다.</p>
+            </div>
+          </div>
+
+          <div class="article" id="art3">
+            <h4 class="article-title">제 3 조 (발행시기)</h4>
+            <div class="article-content">
+              <p>'청파법학'은 매년 1회 발간한다.</p>
+            </div>
+          </div>
+
+          <div class="article" id="art4">
+            <h4 class="article-title">제 4 조 (논문의 요건 및 자격)</h4>
+            <div class="article-content">
+              <ul class="numbered-list parentheses">
+                <li>본 학술지에 발표하는 논문은 법학분야와 관련된 문제 및 현안 등 다른 학술지 또는 간행물에 발표하지 않은 독창적인 학술 논문이어야 한다.</li>
+                <li>본 학술지에 논문을 투고하고자 하는 연구자는 박사과정 수료 이상의 자와 전공분야에서 3년 이상 연구경력이 있는 관련기관 근무자로 한다.</li>
+                <li>본 학술지에 발표하는 논문은 반드시 본 학술지의 집필요령을 준수하여 작성하여야 한다.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="article" id="art5">
+            <h4 class="article-title">제 5 조 (논문의 투고 및 게재)</h4>
+            <div class="article-content">
+              <ul class="numbered-list parentheses">
+                <li>논문은 한글로 써야하며 제출시에는 원본 디스켓 또는 E-mail로 제출한다.</li>
+                <li>모든 논문 투고자는 논문 제출과 동시에 논문심사비를 납부하여야 한다.</li>
+                <li>연구비 수혜 논문을 게재할 경우 저자는 게재료를 납부하여야 한다.</li>
+                <li>논문 저자가 별쇄본을 원하는 경우 별도의 비용을 지불하여야 한다.</li>
+                <li>게재될 논문 원고의 초교는 저자가 하여야 한다.</li>
+                <li>논문은 동일 저자가 동일호에 한편만 게재할 수 있다.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="article" id="art6">
+            <h4 class="article-title">제 6 조 (논문의 분량)</h4>
+            <div class="article-content">
+              <p>[청파법학]에 발표하는 논문의 분량은 200자 원고지 120매 내외 또는 A4용지 20매로 하되, 필요한 경우 원고지 150매 (A4용지 25매)를 초과할 수 있다.</p>
+            </div>
+          </div>
+
+          <div class="article" id="art7">
+            <h4 class="article-title">제 7 조 (논문의 접수 및 심사시기)</h4>
+            <div class="article-content">
+              <p>논문의 접수 및 심사는 연중 수시로 하되, 해당 호의 발간 시점까지 선착순으로 심사하여 최종적으로 게재 가능한 판정을 받은 논문을 게재한다.</p>
+            </div>
+          </div>
+
+          <div class="article" id="art8">
+            <h4 class="article-title">제 8 조 (편집위원회)</h4>
+            <div class="article-content">
+              <ul class="numbered-list parentheses">
+                <li>본 편집위원회는 특성화센터장과 간사를 포함하여 11인 내외의 위원으로 구성한다.</li>
+                <li>편집위원장은 편집위원 중에서 법학연구소장이 임명한다.</li>
+                <li>[청파법학] 편집위원회는 다음 사항을 심의한다.
+                  <ul class="inner-list">
+                    <li>편집 및 발간계획에 따른 사항</li>
+                    <li>논문 편집규정 및 심사규정</li>
+                    <li>논문 심사</li>
+                  </ul>
+                </li>
+                <li>본 편집위원회는 편집위원장 또는 편집위원 1/3 이상의 요청에 의하여 소집, 과반수이상의 출석으로 성립하며 온라인 회의도 동일한 효력을 지닌다.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="article" id="art9">
+            <h4 class="article-title">제 9 조 (편집위원)</h4>
+            <div class="article-content">
+              <ul class="numbered-list parentheses">
+                <li>편집위원은 위원회의 승인을 얻어 법학연구소장이 위촉한다.</li>
+                <li>편집위원은 법학 등 전공 관련 박사학위 소지자로서 전국 4년제 대학의 전임강사 이상, 또는 전공분야에서 3년 이상 연구경력이 있는 관련기관 근무자로 한다.</li>
+                <li>편집위원의 임기는 2년으로 하되 연임할 수 있다.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="article" id="art10">
+            <h4 class="article-title">제 10 조 (심사절차 및 심사위원 선정)</h4>
+            <div class="article-content">
+              <ul class="numbered-list parentheses">
+                <li>편집위원회는 투고된 논문의 주제영역과 형식요건을 검토한 후 접수여부를 결정한다.</li>
+                <li>접수된 논문의 심사를 위하여 편집위원회에서 심사위원을 선정한다.</li>
+                <li>심사위원은 논문별로 3인을 위촉한다. 단 학술회의를 거친 기획주제 논문의 경우는 심사 및 게재여부에 관해 편집위원회에서 결정한다.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="article" id="art11">
+            <h4 class="article-title">제 11 조 (심사기준 평가)</h4>
+            <div class="article-content">
+              <ul class="numbered-list parentheses">
+                <li>연구주제 및 문제제기의 명료성</li>
+                <li>학술적 수준과 독창성</li>
+                <li>연구방법의 타당성</li>
+                <li>논리전개의 적절성</li>
+                <li>문장의 정확성과 각주의 활용 및 그 인용의 정확성</li>
+                <li>논문의 학문적 기대효과 및 활용성</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="article" id="art12">
+            <h4 class="article-title">제 12 조 (심사판정)</h4>
+            <div class="article-content">
+              <p>심사위원은 위 평가 내용을 종합하여 "게재 가" "수정 후 게재" "수정 후 재심" "게재 불가"로 판정하며, 심사위원간의 심사의견이 상이할 때에는 다수의견에 의한다.</p>
+            </div>
+          </div>
+
+          <div class="article" id="art13">
+            <h4 class="article-title">제 13 조 (수정 및 이의신청)</h4>
+            <div class="article-content">
+              <ul class="numbered-list parentheses">
+                <li>심사 판정결과 "수정 후 게재" 판정을 받은 논문에 대하여는 해당 심사보고서를 첨부하여 수정 및 보완을 요구할 수 있으며 수정을 요구 받은 투고자는 수정을 요구받은 날로부터 10일 이내에 논문을 수정하여 제출하여야 한다.</li>
+                <li>수정된 논문을 제출할 때에는 수정된 원고와 더불어 수정사항 및 수정하지 못한 사항들을 구체적으로 첨부해야 한다. 수정요구를 그대로 반영하지 못한 경우에는 그 이유를 명시해야 한다.</li>
+                <li>심사 판정 결과 "수정 후 게재" 판정을 받고도 투고자가 정당한 사유 없이 기한 내에 논문을 제출하지 않고 응답이 없거나 거부할 경우 편집위원회는 게재요청을 철회한 것으로 판단한다.</li>
+                <li>심사 판정결과 "수정 후 재심" 판정을 받은 논문은 원심사자들의 수정의견을 반영하여 수정한 다음, 그 수정본을 다시 제4, 제5의 2인의 심사자의 재심 판정에 따라 게재여부를 결정한다.</li>
+                <li>심사 판정결과 "게재 불가"로 판정된 논문은 게재하지 않으며 해당 심사보고서를 첨부하여 그 사실을 투고자에게 통보한다. 투고자는 동일논문으로 게재신청을 할 수 없으며 수정·보완된 논문인 경우 편집위원회의 심사를 거쳐 접수여부를 결정한다.</li>
+                <li>심사 판정결과에 이의가 있는 투고자는 본 편집위원회에 소명할 수 있으나 모든 심사에 대해서 명시적인 논거를 문서 등 자료를 갖추어 제시해야 이의신청이 가능하다.</li>
+                <li>편집위원회는 이의신청을 접수한 후 원심자의 등급판정이 부당한 이유에서 이루어졌다고 판단되는 경우 종합판정을 재고할 수 있다.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="article" id="art14">
+            <h4 class="article-title">제 14 조 (게재비)</h4>
+            <div class="article-content">
+              <p>논문 등의 기고자에 대하여는 실비의 게재비를 징수할 수 있다.</p>
+            </div>
+          </div>
+
+          <div class="article" id="art15">
+            <h4 class="article-title">제 15 조 (저작권)</h4>
+            <div class="article-content">
+              <ul class="numbered-list parentheses">
+                <li>학회지의 편자는 법학연구소의 명의로 한다. 다만 학회지의 내용에는 개별논문의 필자를 명시한다.</li>
+                <li>법학연구소는 학술지의 편집저작권을 보유한다.</li>
+                <li>학술지에 수록된 개별논문에 대한 저작권 관련 민형사책임은 개별논문의 필자에게 속한다.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="article" id="art16">
+            <h4 class="article-title">제 16 조 (기타)</h4>
+            <div class="article-content">
+              <p>그 외의 명시되지 않은 사안이 발생할 경우 편집위원회의 심의결정에 따른다.</p>
+            </div>
+          </div>
+
+          <!-- Supplementary Provisions -->
+          <div class="supplementary">
+            <h4 class="supplementary-title">부 칙</h4>
+            <div class="supplementary-content">
+              본 간행규정은 <strong>2012년 5월 1일</strong>부터 효력을 지닌다.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

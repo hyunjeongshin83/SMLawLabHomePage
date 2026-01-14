@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>법학연구소 - 학술자료</title>
+  <link href="https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+    }
+
+    /* ========== SUB HERO BANNER ========== */
+    .sub-hero {
+      position: relative;
+      height: 160px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .sub-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .sub-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 40px;
+    }
+
+    .sub-hero-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .sub-hero-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* ========== PAGE HEADER ========== */
+    .page-header {
+      background: white;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .page-title-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .page-title-bar {
+      width: 4px;
+      height: 24px;
+      background: linear-gradient(180deg, #1e40af, #3b82f6);
+      border-radius: 2px;
+    }
+
+    .page-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .breadcrumb a {
+      color: #64748b;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover {
+      color: #1e40af;
+    }
+
+    .breadcrumb svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .breadcrumb-sep {
+      color: #cbd5e1;
+    }
+
+    .breadcrumb-current {
+      color: #1e40af;
+      font-weight: 500;
+    }
+
+    /* ========== CONTENT AREA ========== */
+    .content-wrapper {
+      padding: 32px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .content-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+    }
+
+    /* Board iframe wrapper */
+    .original-board-wrapper {
+      padding: 0;
+      min-height: 500px;
+    }
+
+    .original-board-wrapper iframe {
+      width: 100%;
+      min-height: 500px;
+      border: none;
+    }
+
+    /* Board Header */
+    .board-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      border-bottom: 1px solid #e2e8f0;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .board-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .board-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .board-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .board-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .board-count {
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    /* Search Box */
+    .search-box {
+      display: flex;
+      gap: 8px;
+    }
+
+    .search-select {
+      padding: 10px 14px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #475569;
+      background: white;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .search-select:focus {
+      border-color: #3b82f6;
+    }
+
+    .search-input-wrap {
+      display: flex;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .search-input-wrap:focus-within {
+      border-color: #3b82f6;
+    }
+
+    .search-input {
+      padding: 10px 14px;
+      border: none;
+      font-size: 14px;
+      width: 180px;
+      outline: none;
+    }
+
+    .search-btn {
+      padding: 10px 16px;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s ease;
+    }
+
+    .search-btn:hover {
+      opacity: 0.9;
+    }
+
+    .search-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* Board Table */
+    .board-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .board-table thead {
+      background: #f8fafc;
+    }
+
+    .board-table th {
+      padding: 14px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #64748b;
+      text-align: center;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .board-table th.title-col {
+      text-align: left;
+    }
+
+    .board-table td {
+      padding: 16px;
+      font-size: 14px;
+      color: #475569;
+      text-align: center;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .board-table tbody tr {
+      transition: background 0.2s ease;
+    }
+
+    .board-table tbody tr:hover {
+      background: #f8fafc;
+    }
+
+    .board-table .num-col {
+      width: 60px;
+      color: #94a3b8;
+    }
+
+    .board-table .title-col {
+      text-align: left;
+    }
+
+    .board-table .title-link {
+      color: #1e293b;
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s ease;
+    }
+
+    .board-table .title-link:hover {
+      color: #1e40af;
+    }
+
+    .board-table .file-icon {
+      width: 18px;
+      height: 18px;
+      color: #94a3b8;
+      flex-shrink: 0;
+    }
+
+    .board-table .new-badge {
+      display: inline-block;
+      padding: 2px 6px;
+      background: #ef4444;
+      color: white;
+      font-size: 10px;
+      font-weight: 600;
+      border-radius: 4px;
+      margin-left: 8px;
+    }
+
+    .board-table .author-col {
+      width: 100px;
+    }
+
+    .board-table .date-col {
+      width: 100px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    .board-table .view-col {
+      width: 70px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    /* Empty State */
+    .empty-state {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .empty-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+      color: #cbd5e1;
+    }
+
+    .empty-text {
+      font-size: 15px;
+      color: #94a3b8;
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      padding: 24px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .page-btn {
+      min-width: 36px;
+      height: 36px;
+      padding: 0 10px;
+      border: 1px solid #e2e8f0;
+      background: white;
+      color: #64748b;
+      font-size: 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .page-btn:hover {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    .page-btn.active {
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-color: transparent;
+      color: white;
+    }
+
+    .page-btn.nav-btn {
+      padding: 0 12px;
+    }
+
+    .page-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .sub-hero {
+        height: 120px;
+      }
+
+      .sub-hero-content {
+        padding: 0 20px;
+      }
+
+      .sub-hero-title {
+        font-size: 18px;
+      }
+
+      .page-header {
+        padding: 14px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .content-wrapper {
+        padding: 16px;
+      }
+
+      .board-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .search-box {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      .search-input {
+        width: 100%;
+        flex: 1;
+      }
+
+      .board-table .author-col,
+      .board-table .view-col {
+        display: none;
+      }
+
+      .board-table th,
+      .board-table td {
+        padding: 12px 10px;
+        font-size: 13px;
+      }
+
+      .pagination {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sub Hero Banner -->
+  <section class="sub-hero">
+    <div class="sub-hero-content">
+      <h1 class="sub-hero-title">전인적 품성과 창의적 지성을 갖춘 글로벌 리더 육성</h1>
+      <p class="sub-hero-desc">세상을 바꾸는 부드러운 힘, 숙명</p>
+    </div>
+  </section>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="page-title-section">
+      <div class="page-title-bar"></div>
+      <h2 class="page-title">학술자료</h2>
+    </div>
+    
+    <nav class="breadcrumb">
+      <a href="/wiz/user/lawlab/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9,22 9,12 15,12 15,22"/>
+        </svg>
+        HOME
+      </a>
+      <span class="breadcrumb-sep">::</span>
+      <a href="#">자료실</a>
+      <span class="breadcrumb-sep">&gt;</span>
+      <span class="breadcrumb-current">학술자료</span>
+    </nav>
+  </div>
+
+  <!-- Content Area -->
+  <div class="content-wrapper">
+    <div class="content-card">
+      
+      <!-- Original Board iframe -->
+      <div class="original-board-wrapper">
+        <iframe 
+          id="Handle5" 
+          title="학술자료" 
+          name="board"
+          src="/wiz/contents/board/board.php?home_id=lawlab&handle=5" 
+          frameborder="0" 
+          width="100%" 
+          height="500"
+          scrolling="auto"
+          allowtransparency="true"
+          style="border: none; min-height: 500px;">
+        </iframe>
+      </div>
+
+      <!-- Board Header (샘플 UI - iframe 미작동시 표시) -->
+      <!--
+      <div class="board-header">
+        <div class="board-info">
+          <div class="board-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="board-title">학술자료</h3>
+            <p class="board-count">총 <strong>24</strong>개의 자료가 있습니다</p>
+          </div>
+        </div>
+
+        <div class="search-box">
+          <select class="search-select">
+            <option value="title">제목</option>
+            <option value="content">내용</option>
+            <option value="author">작성자</option>
+          </select>
+          <div class="search-input-wrap">
+            <input type="text" class="search-input" placeholder="검색어를 입력하세요">
+            <button class="search-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Board Table -->
+      <table class="board-table">
+        <thead>
+          <tr>
+            <th class="num-col">번호</th>
+            <th class="title-col">제목</th>
+            <th class="author-col">작성자</th>
+            <th class="date-col">등록일</th>
+            <th class="view-col">조회</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num-col">24</td>
+            <td class="title-col">
+              <a href="#" class="title-link">
+                <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14,2 14,8 20,8"/>
+                </svg>
+                2024년 법학연구소 연구보고서
+                <span class="new-badge">N</span>
+              </a>
+            </td>
+            <td class="author-col">법학연구소</td>
+            <td class="date-col">2024.12.15</td>
+            <td class="view-col">128</td>
+          </tr>
+          <tr>
+            <td class="num-col">23</td>
+            <td class="title-col">
+              <a href="#" class="title-link">
+                <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14,2 14,8 20,8"/>
+                </svg>
+                AI 규제와 기본권 보호 세미나 자료집
+              </a>
+            </td>
+            <td class="author-col">법학연구소</td>
+            <td class="date-col">2024.11.20</td>
+            <td class="view-col">256</td>
+          </tr>
+          <tr>
+            <td class="num-col">22</td>
+            <td class="title-col">
+              <a href="#" class="title-link">
+                <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14,2 14,8 20,8"/>
+                </svg>
+                사회적 약자 보호를 위한 법적 과제 학술대회 발표자료
+              </a>
+            </td>
+            <td class="author-col">법학연구소</td>
+            <td class="date-col">2024.10.18</td>
+            <td class="view-col">312</td>
+          </tr>
+          <tr>
+            <td class="num-col">21</td>
+            <td class="title-col">
+              <a href="#" class="title-link">
+                <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14,2 14,8 20,8"/>
+                </svg>
+                부패 방지 공직자 윤리 3.0 정책방안 연구
+              </a>
+            </td>
+            <td class="author-col">법학연구소</td>
+            <td class="date-col">2024.06.21</td>
+            <td class="view-col">189</td>
+          </tr>
+          <tr>
+            <td class="num-col">20</td>
+            <td class="title-col">
+              <a href="#" class="title-link">
+                <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14,2 14,8 20,8"/>
+                </svg>
+                블록체인 기반 사회의 도래와 법학의 과제
+              </a>
+            </td>
+            <td class="author-col">법학연구소</td>
+            <td class="date-col">2024.04.29</td>
+            <td class="view-col">245</td>
+          </tr>
+          <tr>
+            <td class="num-col">19</td>
+            <td class="title-col">
+              <a href="#" class="title-link">
+                <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14,2 14,8 20,8"/>
+                </svg>
+                연성규범의 법치주의에 대한 도전과 공법적 과제
+              </a>
+            </td>
+            <td class="author-col">법학연구소</td>
+            <td class="date-col">2024.03.04</td>
+            <td class="view-col">198</td>
+          </tr>
+          <tr>
+            <td class="num-col">18</td>
+            <td class="title-col">
+              <a href="#" class="title-link">
+                <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14,2 14,8 20,8"/>
+                </svg>
+                2023년 법학연구소 연간 활동 보고서
+              </a>
+            </td>
+            <td class="author-col">법학연구소</td>
+            <td class="date-col">2024.02.14</td>
+            <td class="view-col">167</td>
+          </tr>
+          <tr>
+            <td class="num-col">17</td>
+            <td class="title-col">
+              <a href="#" class="title-link">
+                <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14,2 14,8 20,8"/>
+                </svg>
+                미래사회를 대비하는 법적 과제 학술대회 자료
+              </a>
+            </td>
+            <td class="author-col">법학연구소</td>
+            <td class="date-col">2023.10.10</td>
+            <td class="view-col">342</td>
+          </tr>
+          <tr>
+            <td class="num-col">16</td>
+            <td class="title-col">
+              <a href="#" class="title-link">
+                <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14,2 14,8 20,8"/>
+                </svg>
+                고령사회에 있어서 가족법의 대응 연구자료
+              </a>
+            </td>
+            <td class="author-col">법학연구소</td>
+            <td class="date-col">2023.09.02</td>
+            <td class="view-col">276</td>
+          </tr>
+          <tr>
+            <td class="num-col">15</td>
+            <td class="title-col">
+              <a href="#" class="title-link">
+                <svg class="file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14,2 14,8 20,8"/>
+                </svg>
+                한중법학회-숙명여자대학교 법학연구소 공동학술대회 자료집
+              </a>
+            </td>
+            <td class="author-col">법학연구소</td>
+            <td class="date-col">2023.06.26</td>
+            <td class="view-col">298</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="page-btn nav-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="11 17 6 12 11 7"/>
+            <polyline points="18 17 13 12 18 7"/>
+          </svg>
+        </button>
+        <button class="page-btn nav-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn nav-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+        <button class="page-btn nav-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="13 17 18 12 13 7"/>
+            <polyline points="6 17 11 12 6 7"/>
+          </svg>
+        </button>
+      </div>
+      -->
+
+    </div>
+  </div>
+</body>
+</html>

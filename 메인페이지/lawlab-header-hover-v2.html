@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>법학연구소 - 숙명여자대학교</title>
+  <link href="https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #ffffff;
+      min-height: 100vh;
+    }
+
+    /* Header Container */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Logo Section */
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-section:hover {
+      transform: translateY(-2px);
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+    }
+
+    .logo-icon::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      right: -3px;
+      width: 12px;
+      height: 12px;
+      background: #06b6d4;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+
+    .logo-icon svg {
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e293b;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-subtitle {
+      font-size: 11px;
+      color: rgba(30, 41, 59, 0.5);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Main Navigation */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-item > span {
+      display: block;
+      padding: 10px 20px;
+      color: rgba(30, 41, 59, 0.75);
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .nav-item:hover > span {
+      color: #1e40af;
+      background: rgba(30, 64, 175, 0.05);
+    }
+
+    /* Sub Menu - 호버 시 나타남 */
+    .submenu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: max-content;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      padding: 8px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s ease;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+      display: flex;
+      gap: 4px;
+      margin-top: 20px; /* 기본 간격 */
+    }
+
+    .nav-item:hover .submenu {
+      opacity: 1;
+      visibility: visible;
+      margin-top: 12px; /* 호버 시 위치 - 약간 위로 올라오는 효과 */
+    }
+
+    .submenu a {
+      padding: 10px 16px;
+      color: rgba(30, 41, 59, 0.75);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .submenu a:hover {
+      color: #1e40af;
+      background: rgba(30, 64, 175, 0.08);
+    }
+
+    /* Utility Links */
+    .utility-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .util-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      color: rgba(30, 41, 59, 0.6);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      background: rgba(30, 64, 175, 0.03);
+      border: 1px solid rgba(30, 64, 175, 0.08);
+    }
+
+    .util-link:hover {
+      color: #1e40af;
+      background: rgba(30, 64, 175, 0.08);
+      border-color: rgba(30, 64, 175, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .util-link svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .util-link.sookmyung {
+      width: auto;
+      padding: 0 16px;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border: none;
+      color: white;
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.25);
+    }
+
+    .util-link.sookmyung:hover {
+      box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+      transform: translateY(-2px);
+    }
+
+    /* Mobile Menu Button */
+    .mobile-menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: none;
+      background: rgba(30, 64, 175, 0.05);
+      border-radius: 10px;
+      cursor: pointer;
+      color: #1e293b;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-menu-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 900px) {
+      .nav-menu {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: flex;
+      }
+
+      .utility-links .util-link:not(.sookmyung) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        padding: 0 16px;
+        height: 64px;
+      }
+
+      .logo-icon {
+        width: 38px;
+        height: 38px;
+      }
+
+      .logo-title {
+        font-size: 16px;
+      }
+
+      .logo-subtitle {
+        font-size: 10px;
+      }
+
+      .util-link.sookmyung {
+        padding: 0 12px;
+        font-size: 12px;
+      }
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      padding: 16px;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-menu-section {
+      margin-bottom: 16px;
+    }
+
+    .mobile-menu-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1e40af;
+      padding: 8px 16px;
+      border-bottom: 1px solid rgba(30, 64, 175, 0.1);
+      margin-bottom: 4px;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 16px;
+      color: rgba(30, 41, 59, 0.8);
+      text-decoration: none;
+      font-size: 14px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .mobile-menu a:hover {
+      background: rgba(30, 64, 175, 0.05);
+      color: #1e40af;
+    }
+
+    /* Spacer */
+    .header-spacer {
+      height: 72px;
+    }
+
+    @media (max-width: 600px) {
+      .header-spacer {
+        height: 64px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <!-- Logo -->
+      <a href="/wiz/user/lawlab/" class="logo-section">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="16"/>
+            <line x1="8" y1="12" x2="16" y2="12"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">법학연구소</span>
+          <span class="logo-subtitle">Sookmyung University</span>
+        </div>
+      </a>
+
+      <!-- Main Navigation - 호버 방식 -->
+      <nav class="nav-menu">
+        <div class="nav-item">
+          <span>연구소소개</span>
+          <div class="submenu">
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=7&menu_seq_open=7-1">연구소장 인사말</a>
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=7&menu_seq_open=7-2">설립목적</a>
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=7&menu_seq_open=7-3">연혁 및 주요활동</a>
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=7&menu_seq_open=7-4">조직</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <span>학술지 청파법학</span>
+          <div class="submenu">
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=8&menu_seq_open=8-1">편집규정</a>
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=8&menu_seq_open=8-2">집필요령</a>
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=8&menu_seq_open=8-3">연구윤리규정</a>
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=8&menu_seq_open=8-4">논문게재신청서</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <span>자료실</span>
+          <div class="submenu">
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=9&menu_seq_open=9-1">학술자료</a>
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=9&menu_seq_open=9-2">기타자료</a>
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=9&menu_seq_open=9-3">언론보도자료</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <span>게시판</span>
+          <div class="submenu">
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=10&menu_seq_open=10-1">공지사항</a>
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=10&menu_seq_open=10-2">자유게시판</a>
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=10&menu_seq_open=10-3">자료실</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Utility Links -->
+      <div class="utility-links">
+        <a href="/wiz/user/lawlab/" class="util-link" title="HOME">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9,22 9,12 15,12 15,22"/>
+          </svg>
+        </a>
+
+        <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=22" class="util-link" title="SITEMAP">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"/>
+            <rect x="14" y="3" width="7" height="7"/>
+            <rect x="14" y="14" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/>
+          </svg>
+        </a>
+
+        <a href="mailto:lawi@sookmyung.ac.kr" class="util-link" title="EMAIL">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+
+        <a href="http://www.sookmyung.ac.kr/" target="_blank" class="util-link sookmyung">
+          <span>숙명여대</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15,3 21,3 21,9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-section">
+        <div class="mobile-menu-title">연구소소개</div>
+        <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=7&menu_seq_open=7-1">연구소장 인사말</a>
+        <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=7&menu_seq_open=7-2">설립목적</a>
+        <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=7&menu_seq_open=7-3">연혁 및 주요활동</a>
+        <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=7&menu_seq_open=7-4">조직</a>
+      </div>
+
+      <div class="mobile-menu-section">
+        <div class="mobile-menu-title">학술지 청파법학</div>
+        <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=8&menu_seq_open=8-1">편집규정</a>
+        <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=8&menu_seq_open=8-2">집필요령</a>
+        <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=8&menu_seq_open=8-3">연구윤리규정</a>
+        <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=8&menu_seq_open=8-4">논문게재신청서</a>
+      </div>
+
+      <div class="mobile-menu-section">
+        <div class="mobile-menu-title">자료실</div>
+        <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=9&menu_seq_open=9-1">학술자료</a>
+        <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=9&menu_seq_open=9-2">기타자료</a>
+        <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=9&menu_seq_open=9-3">언론보도자료</a>
+      </div>
+
+      <div class="mobile-menu-section">
+        <div class="mobile-menu-title">게시판</div>
+        <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=10&menu_seq_open=10-1">공지사항</a>
+        <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=10&menu_seq_open=10-2">자유게시판</a>
+        <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=10&menu_seq_open=10-3">자료실</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Spacer -->
+  <div class="header-spacer"></div>
+
+  <script>
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('active');
+    }
+
+    // 스크롤 효과
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.08)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

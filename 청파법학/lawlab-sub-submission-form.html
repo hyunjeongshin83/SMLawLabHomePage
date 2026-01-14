@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>법학연구소 - 논문게재신청서</title>
+  <link href="https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+    }
+
+    /* ========== SUB HERO BANNER ========== */
+    .sub-hero {
+      position: relative;
+      height: 160px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .sub-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .sub-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 40px;
+    }
+
+    .sub-hero-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .sub-hero-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* ========== PAGE HEADER ========== */
+    .page-header {
+      background: white;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .page-title-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .page-title-bar {
+      width: 4px;
+      height: 24px;
+      background: linear-gradient(180deg, #1e40af, #3b82f6);
+      border-radius: 2px;
+    }
+
+    .page-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .breadcrumb a {
+      color: #64748b;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover {
+      color: #1e40af;
+    }
+
+    .breadcrumb svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .breadcrumb-sep {
+      color: #cbd5e1;
+    }
+
+    .breadcrumb-current {
+      color: #1e40af;
+      font-weight: 500;
+    }
+
+    /* ========== CONTENT AREA ========== */
+    .content-wrapper {
+      padding: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .content-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .content-body {
+      padding: 40px;
+    }
+
+    /* Section Header */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #1e40af;
+    }
+
+    .section-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .section-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #1e293b;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    /* Download Card */
+    .download-card {
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.03), rgba(59, 130, 246, 0.06));
+      border: 2px dashed rgba(30, 64, 175, 0.2);
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .download-card:hover {
+      border-color: #1e40af;
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.05), rgba(59, 130, 246, 0.1));
+    }
+
+    .download-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      color: white;
+      box-shadow: 0 10px 30px rgba(30, 64, 175, 0.3);
+    }
+
+    .download-icon svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .download-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+
+    .download-desc {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+    }
+
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(30, 64, 175, 0.4);
+    }
+
+    .download-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .file-info {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(30, 64, 175, 0.1);
+    }
+
+    .file-info-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .file-info-item svg {
+      width: 16px;
+      height: 16px;
+      color: #94a3b8;
+    }
+
+    /* Info Box */
+    .info-box {
+      margin-top: 32px;
+      padding: 20px;
+      background: #f8fafc;
+      border-radius: 12px;
+      border-left: 4px solid #1e40af;
+    }
+
+    .info-box-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .info-box-title svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .info-list {
+      list-style: none;
+    }
+
+    .info-list li {
+      font-size: 14px;
+      color: #475569;
+      padding: 6px 0;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .info-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #1e40af;
+    }
+
+    /* Contact Box */
+    .contact-box {
+      margin-top: 24px;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(59, 130, 246, 0.1));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1e40af;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .contact-content {
+      flex: 1;
+    }
+
+    .contact-label {
+      font-size: 12px;
+      color: #64748b;
+      margin-bottom: 4px;
+    }
+
+    .contact-value {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .contact-value a {
+      color: #1e40af;
+      text-decoration: none;
+    }
+
+    .contact-value a:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .sub-hero {
+        height: 120px;
+      }
+
+      .sub-hero-content {
+        padding: 0 20px;
+      }
+
+      .sub-hero-title {
+        font-size: 18px;
+      }
+
+      .page-header {
+        padding: 14px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .content-wrapper {
+        padding: 16px;
+      }
+
+      .content-body {
+        padding: 20px;
+      }
+
+      .download-card {
+        padding: 24px;
+      }
+
+      .download-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+      }
+
+      .download-icon svg {
+        width: 30px;
+        height: 30px;
+      }
+
+      .file-info {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .contact-box {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sub Hero Banner -->
+  <section class="sub-hero">
+    <div class="sub-hero-content">
+      <h1 class="sub-hero-title">전인적 품성과 창의적 지성을 갖춘 글로벌 리더 육성</h1>
+      <p class="sub-hero-desc">세상을 바꾸는 부드러운 힘, 숙명</p>
+    </div>
+  </section>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="page-title-section">
+      <div class="page-title-bar"></div>
+      <h2 class="page-title">논문게재신청서</h2>
+    </div>
+    
+    <nav class="breadcrumb">
+      <a href="/wiz/user/lawlab/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9,22 9,12 15,12 15,22"/>
+        </svg>
+        HOME
+      </a>
+      <span class="breadcrumb-sep">::</span>
+      <a href="#">학술지 청파법학</a>
+      <span class="breadcrumb-sep">&gt;</span>
+      <span class="breadcrumb-current">논문게재신청서</span>
+    </nav>
+  </div>
+
+  <!-- Content Area -->
+  <div class="content-wrapper">
+    
+    <div class="content-card">
+      <div class="content-body">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14,2 14,8 20,8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10,9 9,9 8,9"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="section-title">논문게재신청서 다운로드</h3>
+            <p class="section-subtitle">Paper Submission Application Form</p>
+          </div>
+        </div>
+
+        <!-- Download Card -->
+        <div class="download-card">
+          <div class="download-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+          </div>
+          <h4 class="download-title">청파법학 논문게재신청서</h4>
+          <p class="download-desc">
+            『청파법학』에 논문을 투고하시려는 분은 아래 버튼을 클릭하여<br>
+            논문게재신청서를 다운로드 받아 작성 후 제출해 주시기 바랍니다.
+          </p>
+          <a href="/wiz/user/lawlab/download/treatise_appli.hwp" class="download-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            다운로드
+          </a>
+          <div class="file-info">
+            <span class="file-info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14,2 14,8 20,8"/>
+              </svg>
+              파일형식: HWP (한글문서)
+            </span>
+            <span class="file-info-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14,2 14,8 20,8"/>
+              </svg>
+              파일명: treatise_appli.hwp
+            </span>
+          </div>
+        </div>
+
+        <!-- Info Box -->
+        <div class="info-box">
+          <div class="info-box-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            논문 투고 안내
+          </div>
+          <ul class="info-list">
+            <li>논문게재신청서 작성 후 논문 원고와 함께 이메일로 제출해 주시기 바랍니다.</li>
+            <li>논문은 『청파법학』 편집규정 및 집필요령을 준수하여 작성하여야 합니다.</li>
+            <li>모든 논문 투고자는 논문 제출과 동시에 논문심사비를 납부하여야 합니다.</li>
+            <li>논문의 접수 및 심사는 연중 수시로 진행됩니다.</li>
+          </ul>
+        </div>
+
+        <!-- Contact Box -->
+        <div class="contact-box">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div class="contact-content">
+            <div class="contact-label">논문 제출 및 문의</div>
+            <div class="contact-value">
+              <a href="mailto:lawi@sookmyung.ac.kr">lawi@sookmyung.ac.kr</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

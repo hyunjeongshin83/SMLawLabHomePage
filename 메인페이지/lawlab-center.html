@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>법학연구소 - 숙명여자대학교 (Center)</title>
+  <link href="https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8fafc;
+      min-height: 100vh;
+      color: #1e293b;
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero {
+      position: relative;
+      height: 400px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-badge svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .hero-title {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-desc {
+      font-size: 18px;
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    /* ========== MAIN CONTENT ========== */
+    .main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    /* Grid Layout */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    /* Card Styles */
+    .card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .card-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .card-title-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .card-title-icon svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .card-more {
+      font-size: 12px;
+      color: #64748b;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .card-more:hover {
+      color: #1e40af;
+    }
+
+    .card-more svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .card-body {
+      padding: 0;
+    }
+
+    .card-body iframe {
+      width: 100%;
+      min-height: 180px;
+      border: none;
+      display: block;
+    }
+
+    /* Login Card */
+    .login-card .card-body iframe {
+      min-height: 160px;
+    }
+
+    /* ========== INTRO SECTION ========== */
+    .intro-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .intro-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 32px;
+      display: flex;
+      gap: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .intro-card:hover {
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .intro-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+    }
+
+    .intro-icon svg {
+      width: 28px;
+      height: 28px;
+      color: white;
+    }
+
+    .intro-content {
+      flex: 1;
+    }
+
+    .intro-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+
+    .intro-desc {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .intro-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #1e40af;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .intro-more:hover {
+      gap: 10px;
+    }
+
+    .intro-more svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* IT Services Card */
+    .it-services-card {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+    }
+
+    .it-services-card .intro-icon {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: none;
+    }
+
+    .it-services-card .intro-title {
+      color: white;
+    }
+
+    .it-services-card .intro-desc {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .it-service-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .it-service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .it-service-link:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .it-service-link svg {
+      width: 14px;
+      height: 14px;
+      opacity: 0.7;
+    }
+
+    /* ========== QUICK LINKS ========== */
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+    }
+
+    .quick-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding: 24px 16px;
+      background: white;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .quick-link:hover {
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      transform: translateY(-4px);
+      border-color: rgba(30, 64, 175, 0.2);
+    }
+
+    .quick-link-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.08), rgba(59, 130, 246, 0.08));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1e40af;
+      transition: all 0.3s ease;
+    }
+
+    .quick-link:hover .quick-link-icon {
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      color: white;
+      box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+    }
+
+    .quick-link-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .quick-link-text {
+      font-size: 13px;
+      font-weight: 600;
+      color: #475569;
+      text-align: center;
+    }
+
+    .quick-link:hover .quick-link-text {
+      color: #1e40af;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+      .content-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .login-card {
+        grid-column: span 2;
+      }
+
+      .quick-links {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .intro-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .login-card {
+        grid-column: span 1;
+      }
+
+      .hero {
+        height: 300px;
+      }
+
+      .hero-title {
+        font-size: 28px;
+      }
+
+      .hero-desc {
+        font-size: 15px;
+      }
+
+      .quick-links {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .main-content {
+        padding: 24px 16px 40px;
+      }
+
+      .intro-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .intro-icon {
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        SOOKMYUNG WOMAN'S UNIVERSITY
+      </div>
+      <h1 class="hero-title">법학연구소</h1>
+      <p class="hero-desc">법학연구소 홈페이지에 오신 것을 환영합니다</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Content Grid: Login + Notice + Free Board -->
+    <div class="content-grid">
+      <!-- Login Card -->
+      <div class="card login-card">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="card-title-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            MEMBERS LOGIN
+          </div>
+        </div>
+        <div class="card-body">
+          <iframe src="/wiz/contents/login/login.php?home_id=lawlab&handle=1" title="로그인" scrolling="no"></iframe>
+        </div>
+      </div>
+
+      <!-- Notice Board -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="card-title-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14,2 14,8 20,8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            공지사항
+          </div>
+          <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=10&menu_seq_open=10-1" target="_parent" class="card-more">
+            더보기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </a>
+        </div>
+        <div class="card-body">
+          <iframe src="/wiz/contents/board/miniBoard.php?home_id=lawlab&handle=1" title="공지사항" scrolling="no"></iframe>
+        </div>
+      </div>
+
+      <!-- Free Board -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="card-title-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            자유게시판
+          </div>
+          <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=10&menu_seq_open=10-2" target="_parent" class="card-more">
+            더보기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9,18 15,12 9,6"/>
+            </svg>
+          </a>
+        </div>
+        <div class="card-body">
+          <iframe src="/wiz/contents/board/miniBoard.php?home_id=lawlab&handle=2" title="자유게시판" scrolling="no"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intro Section -->
+    <div class="intro-section">
+      <!-- About Card -->
+      <div class="intro-card">
+        <div class="intro-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+        </div>
+        <div class="intro-content">
+          <h3 class="intro-title">법학연구소 소개</h3>
+          <p class="intro-desc">
+            2006년 지식법제연구소로 출범한 법학연구소는 21세기 급변하는 글로벌화·디지털화·지식산업화 시대의 법적 현안을 분석하고 관련 법의 이론과 실제에 관한 연구를 수행합니다.
+          </p>
+          <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=7&menu_seq_open=" target="_parent" class="intro-more">
+            자세히 보기
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12,5 19,12 12,19"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- IT Services Card -->
+      <div class="intro-card it-services-card">
+        <div class="intro-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+        <div class="intro-content">
+          <h3 class="intro-title">IT 서비스</h3>
+          <p class="intro-desc">숙명여대에서 제공하는 IT 서비스입니다.</p>
+          <div class="it-service-links">
+            <a href="http://ccmail.sookmyung.ac.kr/" target="_blank" class="it-service-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              웹메일
+            </a>
+            <a href="http://portal.sookmyung.ac.kr/" target="_blank" class="it-service-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <line x1="3" y1="9" x2="21" y2="9"/>
+                <line x1="9" y1="21" x2="9" y2="9"/>
+              </svg>
+              숙명포털
+            </a>
+            <a href="http://attend.sookmyung.ac.kr/" target="_blank" class="it-service-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22,4 12,14.01 9,11.01"/>
+              </svg>
+              전자출결
+            </a>
+            <a href="http://snowboard.sookmyung.ac.kr/" target="_blank" class="it-service-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              Snowboard
+            </a>
+            <a href="http://www.sookmyung.ac.kr/tel_email/tel_email_search.htm" target="_blank" class="it-service-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              전화번호검색
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="quick-links">
+      <a href="http://admission.sookmyung.ac.kr/" target="_blank" class="quick-link">
+        <div class="quick-link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <span class="quick-link-text">입학정보</span>
+      </a>
+
+      <a href="http://exchange.sookmyung.ac.kr/" target="_blank" class="quick-link">
+        <div class="quick-link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <span class="quick-link-text">국제교류팀</span>
+      </a>
+
+      <a href="http://lib.sookmyung.ac.kr/" target="_blank" class="quick-link">
+        <div class="quick-link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          </svg>
+        </div>
+        <span class="quick-link-text">중앙도서관</span>
+      </a>
+
+      <a href="http://info.sookmyung.ac.kr/" target="_blank" class="quick-link">
+        <div class="quick-link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14,2 14,8 20,8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+        </div>
+        <span class="quick-link-text">학사지원팀</span>
+      </a>
+
+      <a href="http://onestop.sookmyung.ac.kr/" target="_blank" class="quick-link">
+        <div class="quick-link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <span class="quick-link-text">장학팀</span>
+      </a>
+
+      <a href="http://welfare.sookmyung.ac.kr/" target="_blank" class="quick-link">
+        <div class="quick-link-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <span class="quick-link-text">학생지원팀</span>
+      </a>
+    </div>
+  </main>
+</body>
+</html>

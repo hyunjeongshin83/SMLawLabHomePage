@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>법학연구소 - 연구소장 인사말</title>
+  <link href="https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+    }
+
+    /* ========== SUB HERO BANNER ========== */
+    .sub-hero {
+      position: relative;
+      height: 160px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .sub-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .sub-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 40px;
+    }
+
+    .sub-hero-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sub-hero-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* ========== PAGE HEADER ========== */
+    .page-header {
+      background: white;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .page-title-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .page-title-bar {
+      width: 4px;
+      height: 24px;
+      background: linear-gradient(180deg, #1e40af, #3b82f6);
+      border-radius: 2px;
+    }
+
+    .page-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .breadcrumb a {
+      color: #64748b;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover {
+      color: #1e40af;
+    }
+
+    .breadcrumb svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .breadcrumb-sep {
+      color: #cbd5e1;
+    }
+
+    .breadcrumb-current {
+      color: #1e40af;
+      font-weight: 500;
+    }
+
+    /* ========== CONTENT AREA ========== */
+    .content-wrapper {
+      padding: 32px;
+    }
+
+    .content-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+    }
+
+    .content-body {
+      padding: 40px;
+    }
+
+    /* Profile Layout */
+    .profile-layout {
+      display: flex;
+      gap: 40px;
+    }
+
+    .profile-image-area {
+      width: 200px;
+      flex-shrink: 0;
+    }
+
+    .profile-image-wrapper {
+      width: 200px;
+      height: 260px;
+      background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .profile-image-wrapper svg {
+      width: 64px;
+      height: 64px;
+    }
+
+    .profile-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-info {
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .profile-position {
+      font-size: 12px;
+      color: #1e40af;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .profile-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+
+    .profile-term {
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    .profile-text-area {
+      flex: 1;
+    }
+
+    .greeting-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #1e40af;
+    }
+
+    .greeting-text {
+      font-size: 15px;
+      color: #475569;
+      line-height: 1.9;
+    }
+
+    .greeting-text p {
+      margin-bottom: 18px;
+    }
+
+    .greeting-text strong {
+      color: #1e293b;
+    }
+
+    .greeting-signature {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid #e2e8f0;
+      text-align: right;
+    }
+
+    .signature-position {
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 4px;
+    }
+
+    .signature-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    /* Highlight Box */
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.05), rgba(59, 130, 246, 0.05));
+      border-left: 4px solid #1e40af;
+      padding: 20px 24px;
+      border-radius: 0 12px 12px 0;
+      margin: 24px 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+      color: #334155;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 900px) {
+      .profile-layout {
+        flex-direction: column;
+      }
+
+      .profile-image-area {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .profile-image-wrapper {
+        width: 160px;
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sub-hero {
+        height: 120px;
+      }
+
+      .sub-hero-content {
+        padding: 0 20px;
+      }
+
+      .sub-hero-title {
+        font-size: 18px;
+      }
+
+      .page-header {
+        padding: 14px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .content-wrapper {
+        padding: 20px;
+      }
+
+      .content-body {
+        padding: 24px;
+      }
+
+      .greeting-title {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sub Hero Banner -->
+  <section class="sub-hero">
+    <div class="sub-hero-content">
+      <h1 class="sub-hero-title">전인적 품성과 창의적 지성을 갖춘 글로벌 리더 육성</h1>
+      <p class="sub-hero-desc">세상을 바꾸는 부드러운 힘, 숙명</p>
+    </div>
+  </section>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="page-title-section">
+      <div class="page-title-bar"></div>
+      <h2 class="page-title">연구소장 인사말</h2>
+    </div>
+    
+    <nav class="breadcrumb">
+      <a href="/wiz/user/lawlab/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9,22 9,12 15,12 15,22"/>
+        </svg>
+        HOME
+      </a>
+      <span class="breadcrumb-sep">::</span>
+      <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=7">연구소소개</a>
+      <span class="breadcrumb-sep">&gt;</span>
+      <span class="breadcrumb-current">연구소장 인사말</span>
+    </nav>
+  </div>
+
+  <!-- Content Area -->
+  <div class="content-wrapper">
+    <div class="content-card">
+      <div class="content-body">
+        <div class="profile-layout">
+          <!-- 프로필 이미지 영역 -->
+          <div class="profile-image-area">
+            <div class="profile-image-wrapper">
+              <!-- 실제 이미지가 있으면 img 태그 사용 -->
+              <!-- <img src="/wiz/user/lawlab/images/director.jpg" alt="우병창 교수"> -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="profile-info">
+              <p class="profile-position">법학연구소장</p>
+              <p class="profile-name">우병창 교수</p>
+              <p class="profile-term">2024.09.01 ~ 현재</p>
+            </div>
+          </div>
+
+          <!-- 인사말 텍스트 영역 -->
+          <div class="profile-text-area">
+            <h3 class="greeting-title">법학연구소 홈페이지를 방문해 주셔서 감사합니다.</h3>
+            
+            <div class="greeting-text">
+              <p>
+                숙명여자대학교 법학연구소는 <strong>2006년 지식법제연구소</strong>로 출범하여 
+                급변하는 21세기의 글로벌화·디지털화·지식산업화 시대의 법적 현안을 분석하고 
+                관련 법의 이론과 실제에 관한 연구를 통하여 법학교육과 법률문화의 향상·발전에 
+                기여하며 연구결과를 널리 보급·활용하게 함으로써 <strong>국민의 인권 옹호에 
+                기여함</strong>을 목적으로 설립되었습니다.
+              </p>
+
+              <div class="highlight-box">
+                <p>
+                  특히, <strong>아동·여성·가족·사회적 소수자의 인권·복지 분야의 전문 여성법률가 
+                  양성</strong>을 목표로 하는 법학연구소는 특성화 목표 실현을 위하여 아동·여성·가족 
+                  및 사회적 소수자에 관한 인권 복지법제 등 사회적 약자를 위한 법학 관련 분야를 
+                  집중적으로 연구하고 있습니다.
+                </p>
+              </div>
+
+              <p>
+                최근에는 <strong>AI와 소프트웨어, 블록체인 등 과학기술 분야</strong>에서 
+                사회적 약자를 보호하기 위한 노력을 기울이고 있으며, 법체계와 AI 규제, 
+                개인정보보호법, 디지털 사회에서의 법조인 양성 등 다양한 주제로 학술활동을 
+                전개하고 있습니다.
+              </p>
+
+              <p>
+                법학연구소는 매년 다수의 학술대회와 초청강연회, 분과 소모임을 개최하고 
+                있으며, 학술지 <strong>「청파법학」</strong>을 발간하여 법학 연구의 발전에 
+                기여하고 있습니다. 또한 한중법학회, 가족법학회 등 국내외 학술단체와의 
+                교류를 통해 연구 영역을 확장하고 있습니다.
+              </p>
+
+              <p>
+                앞으로도 법학연구소는 학문적 연구와 사회적 실천을 통해 더 나은 사회를 
+                만들어 가는 데 기여하겠습니다. 여러분의 많은 관심과 성원을 부탁드립니다.
+              </p>
+
+              <p>감사합니다.</p>
+            </div>
+
+            <div class="greeting-signature">
+              <p class="signature-position">숙명여자대학교 법학연구소장</p>
+              <p class="signature-name">우 병 창</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

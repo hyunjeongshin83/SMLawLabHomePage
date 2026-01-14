@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>법학연구소 - Left (서브메뉴)</title>
+  <link href="https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: transparent;
+    }
+
+    /* ========== SIDEBAR ========== */
+    .sidebar {
+      width: 220px;
+      background: white;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Sidebar Header */
+    .sidebar-header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .sidebar-logo {
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+    }
+
+    .sidebar-logo svg {
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+
+    .sidebar-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-subtitle {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Menu Section */
+    .menu-section {
+      padding: 12px 8px;
+    }
+
+    .menu-category {
+      margin-bottom: 8px;
+    }
+
+    .menu-category-title {
+      font-size: 11px;
+      font-weight: 600;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 8px 12px 6px;
+    }
+
+    .menu-list {
+      list-style: none;
+    }
+
+    .menu-item a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      color: #475569;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .menu-item a:hover {
+      background: rgba(30, 64, 175, 0.05);
+      color: #1e40af;
+    }
+
+    .menu-item a.active {
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(59, 130, 246, 0.08));
+      color: #1e40af;
+      font-weight: 600;
+    }
+
+    .menu-item svg {
+      width: 16px;
+      height: 16px;
+      opacity: 0.6;
+      flex-shrink: 0;
+    }
+
+    .menu-item a:hover svg,
+    .menu-item a.active svg {
+      opacity: 1;
+    }
+
+    /* Contact Info */
+    .sidebar-contact {
+      padding: 16px;
+      margin: 8px;
+      background: #f8fafc;
+      border-radius: 10px;
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    .sidebar-contact strong {
+      color: #1e293b;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .sidebar-contact a {
+      color: #1e40af;
+      text-decoration: none;
+    }
+
+    .sidebar-contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== BACK TO TOP ========== */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64748b;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(30, 64, 175, 0.3);
+      border-color: transparent;
+    }
+
+    .back-to-top svg {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <!-- Sidebar Header -->
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="16"/>
+          <line x1="8" y1="12" x2="16" y2="12"/>
+        </svg>
+      </div>
+      <h2 class="sidebar-title">법학연구소</h2>
+      <p class="sidebar-subtitle">Law Research Institute</p>
+    </div>
+
+    <!-- Menu Section -->
+    <nav class="menu-section">
+      <!-- 연구소소개 -->
+      <div class="menu-category">
+        <div class="menu-category-title">연구소소개</div>
+        <ul class="menu-list">
+          <li class="menu-item">
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=7&menu_seq_open=7-1" class="active">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              연구소장 인사말
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=7&menu_seq_open=7-2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="16" x2="12" y2="12"/>
+                <line x1="12" y1="8" x2="12.01" y2="8"/>
+              </svg>
+              설립목적
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=7&menu_seq_open=7-3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+              </svg>
+              연혁 및 주요활동
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=7&menu_seq_open=7-4">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              조직
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Contact Info -->
+    <div class="sidebar-contact">
+      <strong>연락처</strong>
+      진리관 511호<br>
+      TEL: 02-2077-7359<br>
+      <a href="mailto:lawi@sookmyung.ac.kr">lawi@sookmyung.ac.kr</a>
+    </div>
+  </aside>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop" title="맨 위로">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="18,15 12,9 6,15"/>
+    </svg>
+  </a>
+
+  <script>
+    const backToTopBtn = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

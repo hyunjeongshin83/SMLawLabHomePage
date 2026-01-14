@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>법학연구소 - 연혁 및 주요활동</title>
+  <link href="https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+    }
+
+    /* ========== SUB HERO BANNER ========== */
+    .sub-hero {
+      position: relative;
+      height: 160px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .sub-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .sub-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 40px;
+    }
+
+    .sub-hero-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .sub-hero-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* ========== PAGE HEADER ========== */
+    .page-header {
+      background: white;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .page-title-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .page-title-bar {
+      width: 4px;
+      height: 24px;
+      background: linear-gradient(180deg, #1e40af, #3b82f6);
+      border-radius: 2px;
+    }
+
+    .page-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .breadcrumb a {
+      color: #64748b;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover {
+      color: #1e40af;
+    }
+
+    .breadcrumb svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .breadcrumb-sep {
+      color: #cbd5e1;
+    }
+
+    .breadcrumb-current {
+      color: #1e40af;
+      font-weight: 500;
+    }
+
+    /* ========== CONTENT AREA ========== */
+    .content-wrapper {
+      padding: 32px;
+    }
+
+    .content-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .content-body {
+      padding: 40px;
+    }
+
+    /* Section Header */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #1e40af;
+    }
+
+    .section-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .section-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #1e293b;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    /* Intro Text */
+    .intro-text {
+      font-size: 15px;
+      color: #475569;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      padding: 16px 20px;
+      background: #f8fafc;
+      border-radius: 10px;
+      border-left: 4px solid #1e40af;
+    }
+
+    /* Year Filter */
+    .year-filter {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .year-btn {
+      padding: 8px 16px;
+      background: #f1f5f9;
+      border: none;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #64748b;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .year-btn:hover {
+      background: #e2e8f0;
+      color: #1e293b;
+    }
+
+    .year-btn.active {
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      color: white;
+    }
+
+    /* Events Table */
+    .events-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .events-table thead {
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      color: white;
+    }
+
+    .events-table th {
+      padding: 14px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .events-table th:first-child {
+      width: 130px;
+      border-radius: 8px 0 0 0;
+    }
+
+    .events-table th:last-child {
+      border-radius: 0 8px 0 0;
+    }
+
+    .events-table tbody tr {
+      border-bottom: 1px solid #f1f5f9;
+      transition: background 0.2s ease;
+    }
+
+    .events-table tbody tr:hover {
+      background: rgba(30, 64, 175, 0.02);
+    }
+
+    .events-table td {
+      padding: 14px 16px;
+      font-size: 14px;
+      vertical-align: top;
+    }
+
+    .events-table .date-cell {
+      font-weight: 600;
+      color: #1e40af;
+      white-space: nowrap;
+    }
+
+    .events-table .content-cell {
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    .event-type {
+      display: inline-block;
+      padding: 3px 8px;
+      background: rgba(30, 64, 175, 0.1);
+      color: #1e40af;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: 4px;
+      margin-right: 8px;
+    }
+
+    /* Publication Section */
+    .publication-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .publication-card {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .publication-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .publication-card h4 svg {
+      width: 18px;
+      height: 18px;
+      color: #1e40af;
+    }
+
+    .publication-card p {
+      font-size: 14px;
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    .publication-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      border-radius: 4px;
+      margin-top: 12px;
+    }
+
+    /* Scroll Container */
+    .table-scroll {
+      max-height: 600px;
+      overflow-y: auto;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .table-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .table-scroll::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+
+    .table-scroll::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+
+    .table-scroll::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+
+    /* Stats */
+    .stats-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: #f8fafc;
+      border-radius: 8px;
+    }
+
+    .stat-number {
+      font-size: 20px;
+      font-weight: 800;
+      color: #1e40af;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .sub-hero {
+        height: 120px;
+      }
+
+      .sub-hero-content {
+        padding: 0 20px;
+      }
+
+      .sub-hero-title {
+        font-size: 18px;
+      }
+
+      .page-header {
+        padding: 14px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .content-wrapper {
+        padding: 16px;
+      }
+
+      .content-body {
+        padding: 20px;
+      }
+
+      .events-table th,
+      .events-table td {
+        padding: 10px 12px;
+        font-size: 13px;
+      }
+
+      .events-table .date-cell {
+        font-size: 12px;
+      }
+
+      .publication-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sub Hero Banner -->
+  <section class="sub-hero">
+    <div class="sub-hero-content">
+      <h1 class="sub-hero-title">전인적 품성과 창의적 지성을 갖춘 글로벌 리더 육성</h1>
+      <p class="sub-hero-desc">세상을 바꾸는 부드러운 힘, 숙명</p>
+    </div>
+  </section>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="page-title-section">
+      <div class="page-title-bar"></div>
+      <h2 class="page-title">연혁 및 주요활동</h2>
+    </div>
+    
+    <nav class="breadcrumb">
+      <a href="/wiz/user/lawlab/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9,22 9,12 15,12 15,22"/>
+        </svg>
+        HOME
+      </a>
+      <span class="breadcrumb-sep">::</span>
+      <a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&menu_seq=7">연구소소개</a>
+      <span class="breadcrumb-sep">&gt;</span>
+      <span class="breadcrumb-current">연혁 및 주요활동</span>
+    </nav>
+  </div>
+
+  <!-- Content Area -->
+  <div class="content-wrapper">
+    
+    <!-- Section 1: 학술행사 -->
+    <div class="content-card">
+      <div class="content-body">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="section-title">1. 학술행사 등의 개최</h3>
+            <p class="section-subtitle">Academic Events and Conferences</p>
+          </div>
+        </div>
+
+        <p class="intro-text">
+          법학연구소는 아동·여성·가족·사회적 소수자, 그리고 소비자의 인권·복지 관련 주제로 
+          다양한 국내외 학술행사를 개최하고 있습니다.
+        </p>
+
+        <!-- Stats -->
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">학술대회</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">2008~</span>
+            <span class="stat-label">활동기간</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">20+</span>
+            <span class="stat-label">공동연구기관</span>
+          </div>
+        </div>
+
+        <!-- Year Filter -->
+        <div class="year-filter">
+          <button class="year-btn active" data-year="all">전체</button>
+          <button class="year-btn" data-year="2015">2015</button>
+          <button class="year-btn" data-year="2014">2014</button>
+          <button class="year-btn" data-year="2013">2013</button>
+          <button class="year-btn" data-year="2012">2012</button>
+          <button class="year-btn" data-year="2011">2011</button>
+          <button class="year-btn" data-year="2010">2010</button>
+          <button class="year-btn" data-year="2009">2009</button>
+          <button class="year-btn" data-year="2008">2008</button>
+        </div>
+
+        <!-- Events Table -->
+        <div class="table-scroll">
+          <table class="events-table">
+            <thead>
+              <tr>
+                <th>년 도</th>
+                <th>내 용</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 2015 -->
+              <tr data-year="2015">
+                <td class="date-cell">2015.11.06</td>
+                <td class="content-cell"><span class="event-type">공동학술대회</span>인터넷 광고에 대한 법적 규율에서의 과제와 전망 (한국경제법학회·숙명여대 법학연구소)</td>
+              </tr>
+              <tr data-year="2015">
+                <td class="date-cell">2015.10.30</td>
+                <td class="content-cell"><span class="event-type">공동학술대회</span>아동이주의 이민법적 쟁점 (한국이민법학회·숙명여대 법학연구소)</td>
+              </tr>
+              <tr data-year="2015">
+                <td class="date-cell">2015.06.19</td>
+                <td class="content-cell"><span class="event-type">정례학술발표회</span>한국전통법제 연구방법론의 성찰 (한국법사학회·숙명여대 법학연구소)</td>
+              </tr>
+              <tr data-year="2015">
+                <td class="date-cell">2015.06.05</td>
+                <td class="content-cell"><span class="event-type">공동심포지엄</span>대한법학교수회·대한변호사협회·숙명여대 법학연구소 공동 심포지엄</td>
+              </tr>
+              <tr data-year="2015">
+                <td class="date-cell">2015.04.17</td>
+                <td class="content-cell"><span class="event-type">공동학술대회</span>한국가족법의 현대적 과제 (한국이민법학회·숙명여대 법학연구소)</td>
+              </tr>
+              
+              <!-- 2014 -->
+              <tr data-year="2014">
+                <td class="date-cell">2014.11.21</td>
+                <td class="content-cell"><span class="event-type">공동학술대회</span>국가혁신을 위한 법적 과제 (입법이론실무학회·숙명여대 법학연구소)</td>
+              </tr>
+              <tr data-year="2014">
+                <td class="date-cell">2014.10.18</td>
+                <td class="content-cell"><span class="event-type">공동학술대회</span>청헌 김증한 교수님의 생애와 학문세계 (한국민사법학회·숙명여대 법학연구소)</td>
+              </tr>
+              <tr data-year="2014">
+                <td class="date-cell">2014.08.22</td>
+                <td class="content-cell"><span class="event-type">공동학술대회</span>청렴국가 구현을 위한 관료제의 부패척결방안 모색 (한국부패학회·숙명여대 법학연구소)</td>
+              </tr>
+              <tr data-year="2014">
+                <td class="date-cell">2014.06.23</td>
+                <td class="content-cell"><span class="event-type">초청강연회</span>공법학 원로와의 대화 : 이상규 변호사</td>
+              </tr>
+              <tr data-year="2014">
+                <td class="date-cell">2014.04.25</td>
+                <td class="content-cell"><span class="event-type">공동학술대회</span>개인정보의 유출과 피해자 보호 (한국피해자학회·숙명여대 법학연구소)</td>
+              </tr>
+              <tr data-year="2014">
+                <td class="date-cell">2014.02.07</td>
+                <td class="content-cell"><span class="event-type">공동학술대회</span>아동복지법제의 현황과 과제 (숙명여대 아동연구소·법학연구소)</td>
+              </tr>
+
+              <!-- 2013 -->
+              <tr data-year="2013">
+                <td class="date-cell">2013.12.14</td>
+                <td class="content-cell"><span class="event-type">공동학술대회</span>자본과 시장 - 법철학적 고찰 (한국법철학회·숙명여대 법학연구소)</td>
+              </tr>
+              <tr data-year="2013">
+                <td class="date-cell">2013.12.06</td>
+                <td class="content-cell"><span class="event-type">공동학술대회</span>언론보도의 자유와 아동 인권 (숙명여대 아동연구소·법학연구소)</td>
+              </tr>
+              <tr data-year="2013">
+                <td class="date-cell">2013.05.31</td>
+                <td class="content-cell"><span class="event-type">춘계학술대회</span>사회보장법의 현황과 과제</td>
+              </tr>
+              <tr data-year="2013">
+                <td class="date-cell">2013.04.13</td>
+                <td class="content-cell"><span class="event-type">공동학술대회</span>국제법상 제재의 재조명 (국제법 평론회·숙명여대 법학연구소)</td>
+              </tr>
+              <tr data-year="2013">
+                <td class="date-cell">2013.03.23</td>
+                <td class="content-cell"><span class="event-type">초청강연회</span>일본 메이지민법 제정의 경위와 비교법사적 의의 (일본 학습원대학 岡孝 교수)</td>
+              </tr>
+
+              <!-- 2012 -->
+              <tr data-year="2012">
+                <td class="date-cell">2012.11.20</td>
+                <td class="content-cell"><span class="event-type">가을학술대회</span>헌법재판에 관한 주요 쟁점</td>
+              </tr>
+              <tr data-year="2012">
+                <td class="date-cell">2012.11.09</td>
+                <td class="content-cell"><span class="event-type">추계학술대회</span>공정거래법과 경제민주화 (특성화연구센터)</td>
+              </tr>
+              <tr data-year="2012">
+                <td class="date-cell">2012.05.16</td>
+                <td class="content-cell"><span class="event-type">기념학술대회</span>민주국가에서의 집회의 자유 (숙명여대 법과대학 30주년 기념)</td>
+              </tr>
+              <tr data-year="2012">
+                <td class="date-cell">2012.04.28</td>
+                <td class="content-cell"><span class="event-type">국제학술대회</span>동아시아에서의 역내 및 역외 경쟁정책 협력</td>
+              </tr>
+              <tr data-year="2012">
+                <td class="date-cell">2012.02.15</td>
+                <td class="content-cell"><span class="event-type">학술대회</span>2011년 주요 상사판례의 동향</td>
+              </tr>
+
+              <!-- 2011 -->
+              <tr data-year="2011">
+                <td class="date-cell">2011.12.20</td>
+                <td class="content-cell"><span class="event-type">초청강연회</span>불능미수 (형법 제27조에서의 위험성판단을 중심으로)</td>
+              </tr>
+              <tr data-year="2011">
+                <td class="date-cell">2011.12.10</td>
+                <td class="content-cell"><span class="event-type">학술대회</span>미혼모의 인권과 법적 지위</td>
+              </tr>
+              <tr data-year="2011">
+                <td class="date-cell">2011.11.01</td>
+                <td class="content-cell"><span class="event-type">국제학술대회</span>동북아시아 시장에서의 소비자 보호</td>
+              </tr>
+              <tr data-year="2011">
+                <td class="date-cell">2011.10.22</td>
+                <td class="content-cell"><span class="event-type">학술대회</span>적극적 조치의 현재와 나아갈 방향</td>
+              </tr>
+              <tr data-year="2011">
+                <td class="date-cell">2011.09.23</td>
+                <td class="content-cell"><span class="event-type">학술대회</span>가족법의 최근쟁점</td>
+              </tr>
+              <tr data-year="2011">
+                <td class="date-cell">2011.06.18</td>
+                <td class="content-cell"><span class="event-type">학술대회</span>젠더정의와 여성법조인의 미래</td>
+              </tr>
+              <tr data-year="2011">
+                <td class="date-cell">2011.05.27</td>
+                <td class="content-cell"><span class="event-type">학술대회</span>정보화 사회와 공법적 쟁점</td>
+              </tr>
+              <tr data-year="2011">
+                <td class="date-cell">2011.04.30</td>
+                <td class="content-cell"><span class="event-type">국제학술대회</span>동아시아 시장과 경쟁정책 (East Asian Market and Competition Policy)</td>
+              </tr>
+              <tr data-year="2011">
+                <td class="date-cell">2011.03~05</td>
+                <td class="content-cell"><span class="event-type">연수과정</span>'공정거래법과 경제학' 연수과정 제3기 운영</td>
+              </tr>
+
+              <!-- 2010 -->
+              <tr data-year="2010">
+                <td class="date-cell">2010.12.10</td>
+                <td class="content-cell"><span class="event-type">초청간담회</span>법과 신기술</td>
+              </tr>
+              <tr data-year="2010">
+                <td class="date-cell">2010.10.21</td>
+                <td class="content-cell"><span class="event-type">국제학술대회</span>Consumer, Competition and Regional Economic Integration</td>
+              </tr>
+              <tr data-year="2010">
+                <td class="date-cell">2010.10.20</td>
+                <td class="content-cell"><span class="event-type">초청강연회</span>From Market Concentration to Market Outcome - The evolution of US antitrust agency horizontal merger guidelines</td>
+              </tr>
+              <tr data-year="2010">
+                <td class="date-cell">2010.05.07</td>
+                <td class="content-cell"><span class="event-type">신용경제특강</span>대학생을 위한 신용경제아카데미</td>
+              </tr>
+              <tr data-year="2010">
+                <td class="date-cell">2010.05.01</td>
+                <td class="content-cell"><span class="event-type">학술대회</span>글로벌 시장과 공정거래 정책</td>
+              </tr>
+              <tr data-year="2010">
+                <td class="date-cell">2010.04.29</td>
+                <td class="content-cell"><span class="event-type">초청강연회</span>법의 날 기념 초청강연회</td>
+              </tr>
+              <tr data-year="2010">
+                <td class="date-cell">2010.03~05</td>
+                <td class="content-cell"><span class="event-type">연수과정</span>'공정거래법과 경제학' 연수과정 제2기 운영</td>
+              </tr>
+
+              <!-- 2009 -->
+              <tr data-year="2009">
+                <td class="date-cell">2009.12.04</td>
+                <td class="content-cell"><span class="event-type">초청강연회</span>European Competition Law Trends and Law and Economics</td>
+              </tr>
+              <tr data-year="2009">
+                <td class="date-cell">2009.12.03</td>
+                <td class="content-cell"><span class="event-type">초청강연회</span>대륙법의 관점에서 본 경쟁법 - EU법을 중심으로</td>
+              </tr>
+              <tr data-year="2009">
+                <td class="date-cell">2009.11.20</td>
+                <td class="content-cell"><span class="event-type">학술대회</span>공정거래법의 국제적 조망 - 미국·중국 및 한국의 최신 동향</td>
+              </tr>
+              <tr data-year="2009">
+                <td class="date-cell">2009.11.19</td>
+                <td class="content-cell"><span class="event-type">초청강연회</span>공정거래법 집행에 있어서 경제분석의 활용</td>
+              </tr>
+              <tr data-year="2009">
+                <td class="date-cell">2009.10.29</td>
+                <td class="content-cell"><span class="event-type">공동학술대회</span>프로야구산업의 발전을 위한 제도적 과제 (국민대 법학연구소·숙명여대 법학연구소)</td>
+              </tr>
+              <tr data-year="2009">
+                <td class="date-cell">2009.09.25</td>
+                <td class="content-cell"><span class="event-type">국제학술대회</span>Globalization and Law</td>
+              </tr>
+              <tr data-year="2009">
+                <td class="date-cell">2009.06~07</td>
+                <td class="content-cell"><span class="event-type">연수과정</span>'공정거래법과 경제학' 연수과정</td>
+              </tr>
+              <tr data-year="2009">
+                <td class="date-cell">2009.05.21</td>
+                <td class="content-cell"><span class="event-type">학술대회</span>디지털 환경에서의 저작권 보호 - 한·불 양국의 현황과 전망</td>
+              </tr>
+              <tr data-year="2009">
+                <td class="date-cell">2009.05.15</td>
+                <td class="content-cell"><span class="event-type">공동학술대회</span>한국손해사정학회 창립 1주년 기념 공동학술대회</td>
+              </tr>
+              <tr data-year="2009">
+                <td class="date-cell">2009.05.11</td>
+                <td class="content-cell"><span class="event-type">초청강연회</span>신용경제 시리즈 제3회 : 소비자 피해 사례 및 해결방안</td>
+              </tr>
+              <tr data-year="2009">
+                <td class="date-cell">2009.04.27</td>
+                <td class="content-cell"><span class="event-type">초청강연회</span>신용경제 시리즈 제2회 : 신용카드의 현명한 사용, 소비자의 권리 이해 및 행사방법</td>
+              </tr>
+              <tr data-year="2009">
+                <td class="date-cell">2009.03.27</td>
+                <td class="content-cell"><span class="event-type">초청강연회</span>신용경제 시리즈 제1회 : 개인신용, 신용정보관리 및 신용도 향상과 신용관리법</td>
+              </tr>
+
+              <!-- 2008 -->
+              <tr data-year="2008">
+                <td class="date-cell">2008.12.12</td>
+                <td class="content-cell"><span class="event-type">학술대회</span>공정거래법 집행에 있어 경제분석의 강화를 위한 인적 인프라의 확충</td>
+              </tr>
+              <tr data-year="2008">
+                <td class="date-cell">2008.10.31</td>
+                <td class="content-cell"><span class="event-type">학술대회</span>EU 경쟁법을 통한 소비자 복지의 증진</td>
+              </tr>
+              <tr data-year="2008">
+                <td class="date-cell">2008.10.27</td>
+                <td class="content-cell"><span class="event-type">특강</span>대학생을 위한 완소 특강 : 신용, 신용카드 따라잡기</td>
+              </tr>
+              <tr data-year="2008">
+                <td class="date-cell">2008.09.05</td>
+                <td class="content-cell"><span class="event-type">국제학술대회</span>Consumer Law : Consumer Policy in Global Context</td>
+              </tr>
+              <tr data-year="2008">
+                <td class="date-cell">2008.06.28</td>
+                <td class="content-cell"><span class="event-type">학술대회</span>소비자보호의 국제적·비교법적 조망</td>
+              </tr>
+              <tr data-year="2008">
+                <td class="date-cell">2008.05.31</td>
+                <td class="content-cell"><span class="event-type">학술대회</span>법학 전문인 육성을 위한 사고와 표현 교육의 방향</td>
+              </tr>
+              <tr data-year="2008">
+                <td class="date-cell">2008.04.24</td>
+                <td class="content-cell"><span class="event-type">학술대회</span>다문화 사회와 사회적 소수자의 권리</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: 학술지 발간 -->
+    <div class="content-card">
+      <div class="content-body">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="section-title">2. 학술지 발간</h3>
+            <p class="section-subtitle">Academic Journal Publications</p>
+          </div>
+        </div>
+
+        <div class="publication-grid">
+          <div class="publication-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14,2 14,8 20,8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10,9 9,9 8,9"/>
+              </svg>
+              법학연구소 학술지
+            </h4>
+            <p>
+              글로벌화·디지털화·지식산업화시대의 법적현안과 관련된 법의 이론과 실제에 관한 
+              종합적이고 다양한 연구를 통해 법학발전에 기여함을 목적으로 합니다. 
+              본교 법학교수 및 대학원생은 물론, 국내외 저명 법과대학 교수 및 실무가, 
+              법조유관직역 전문가들의 연구활동 참여를 통해 개방적, 진보적 연구활동의 장으로서 
+              기능하고 있습니다.
+            </p>
+          </div>
+
+          <div class="publication-card">
+            <h4>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+              </svg>
+              청파법학
+            </h4>
+            <p>
+              법학연구소 특성화센터는 교내의 아시아여성연구소, 아동연구소 등과 함께 
+              특성화와 관련된 학제간 연구를 연계하고 있습니다. 아동·여성·가족·사회적 소수자의 
+              인권·복지 분야의 다양한 연구 성과를 게재한 「청파법학」을 발간하고 있습니다.
+            </p>
+            <span class="publication-badge">2008년 창간 · 연 2회 정기발간</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Year Filter Functionality
+    const yearBtns = document.querySelectorAll('.year-btn');
+    const rows = document.querySelectorAll('.events-table tbody tr');
+
+    yearBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Update active state
+        yearBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        const year = this.dataset.year;
+
+        rows.forEach(row => {
+          if (year === 'all' || row.dataset.year === year) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>법학연구소 - 집필요령</title>
+  <link href="https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+    }
+
+    /* ========== SUB HERO BANNER ========== */
+    .sub-hero {
+      position: relative;
+      height: 160px;
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .sub-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .sub-hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 40px;
+    }
+
+    .sub-hero-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .sub-hero-desc {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* ========== PAGE HEADER ========== */
+    .page-header {
+      background: white;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .page-title-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .page-title-bar {
+      width: 4px;
+      height: 24px;
+      background: linear-gradient(180deg, #1e40af, #3b82f6);
+      border-radius: 2px;
+    }
+
+    .page-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .breadcrumb a {
+      color: #64748b;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s ease;
+    }
+
+    .breadcrumb a:hover {
+      color: #1e40af;
+    }
+
+    .breadcrumb svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .breadcrumb-sep {
+      color: #cbd5e1;
+    }
+
+    .breadcrumb-current {
+      color: #1e40af;
+      font-weight: 500;
+    }
+
+    /* ========== CONTENT AREA ========== */
+    .content-wrapper {
+      padding: 32px;
+    }
+
+    .content-card {
+      background: white;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .content-body {
+      padding: 40px;
+    }
+
+    /* Section Header */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #1e40af;
+    }
+
+    .section-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #1e40af, #3b82f6);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .section-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #1e293b;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    /* Chapter */
+    .chapter {
+      margin-bottom: 40px;
+    }
+
+    .chapter:last-child {
+      margin-bottom: 0;
+    }
+
+    .chapter-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 20px;
+      padding: 12px 16px;
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.08), rgba(59, 130, 246, 0.08));
+      border-radius: 8px;
+      border-left: 4px solid #1e40af;
+    }
+
+    /* Guidelines */
+    .guideline {
+      margin-bottom: 24px;
+      padding-left: 16px;
+    }
+
+    .guideline-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .guideline-title .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background: #1e40af;
+      color: white;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .guideline-content {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.8;
+      padding-left: 30px;
+    }
+
+    .guideline-content p {
+      margin-bottom: 8px;
+    }
+
+    /* Sub Guidelines */
+    .sub-guideline {
+      margin-top: 16px;
+      padding-left: 20px;
+    }
+
+    .sub-guideline-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 8px;
+    }
+
+    .sub-guideline-content {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.8;
+    }
+
+    /* Example Box */
+    .example-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 10px 0;
+      font-size: 13px;
+      color: #475569;
+      font-family: 'Pretendard', monospace;
+    }
+
+    .example-box .label {
+      font-size: 11px;
+      color: #1e40af;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .example-box code {
+      display: block;
+      line-height: 1.7;
+    }
+
+    /* Hierarchy */
+    .hierarchy {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin: 12px 0;
+      padding-left: 20px;
+    }
+
+    .hierarchy-item {
+      font-size: 13px;
+      color: #475569;
+      padding: 6px 12px;
+      background: #f1f5f9;
+      border-radius: 4px;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .hierarchy-item strong {
+      color: #1e40af;
+    }
+
+    /* Reference Types */
+    .ref-type {
+      margin-top: 16px;
+      padding: 16px;
+      background: #fafafa;
+      border-radius: 8px;
+      border: 1px solid #f1f5f9;
+    }
+
+    .ref-type-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ref-type-title::before {
+      content: '❒';
+    }
+
+    .ref-type-content {
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.8;
+    }
+
+    /* Notice Box */
+    .notice-box {
+      margin-top: 32px;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, rgba(30, 64, 175, 0.05), rgba(59, 130, 246, 0.05));
+      border: 1px solid rgba(30, 64, 175, 0.15);
+      border-radius: 8px;
+      font-size: 13px;
+      color: #1e40af;
+    }
+
+    .notice-box strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* TOC */
+    .toc {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 32px;
+    }
+
+    .toc-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #64748b;
+      margin-bottom: 12px;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .toc-item {
+      padding: 8px 12px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #475569;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .toc-item:hover {
+      background: #1e40af;
+      color: white;
+      border-color: #1e40af;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 768px) {
+      .sub-hero {
+        height: 120px;
+      }
+
+      .sub-hero-content {
+        padding: 0 20px;
+      }
+
+      .sub-hero-title {
+        font-size: 18px;
+      }
+
+      .page-header {
+        padding: 14px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .content-wrapper {
+        padding: 16px;
+      }
+
+      .content-body {
+        padding: 20px;
+      }
+
+      .toc-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .guideline-content {
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sub Hero Banner -->
+  <section class="sub-hero">
+    <div class="sub-hero-content">
+      <h1 class="sub-hero-title">전인적 품성과 창의적 지성을 갖춘 글로벌 리더 육성</h1>
+      <p class="sub-hero-desc">세상을 바꾸는 부드러운 힘, 숙명</p>
+    </div>
+  </section>
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="page-title-section">
+      <div class="page-title-bar"></div>
+      <h2 class="page-title">집필요령</h2>
+    </div>
+    
+    <nav class="breadcrumb">
+      <a href="/wiz/user/lawlab/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9,22 9,12 15,12 15,22"/>
+        </svg>
+        HOME
+      </a>
+      <span class="breadcrumb-sep">::</span>
+      <a href="#">학술지 청파법학</a>
+      <span class="breadcrumb-sep">&gt;</span>
+      <span class="breadcrumb-current">집필요령</span>
+    </nav>
+  </div>
+
+  <!-- Content Area -->
+  <div class="content-wrapper">
+    
+    <div class="content-card">
+      <div class="content-body">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+              <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+              <path d="M2 2l7.586 7.586"/>
+              <circle cx="11" cy="11" r="2"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="section-title">청파법학 집필요령</h3>
+            <p class="section-subtitle">Writing Guidelines for Cheongpa Law Review</p>
+          </div>
+        </div>
+
+        <!-- TOC -->
+        <div class="toc">
+          <div class="toc-title">목차</div>
+          <div class="toc-grid">
+            <a href="#chapter1" class="toc-item">Ⅰ. 기본 원칙</a>
+            <a href="#chapter2" class="toc-item">Ⅱ. 논문의 체제</a>
+          </div>
+        </div>
+
+        <!-- Chapter 1: 기본 원칙 -->
+        <div class="chapter" id="chapter1">
+          <h3 class="chapter-title">Ⅰ. 기본 원칙</h3>
+
+          <div class="guideline">
+            <h4 class="guideline-title"><span class="num">1</span> 분량</h4>
+            <div class="guideline-content">
+              <p>원고는 「한글」 프로그램 사용을 원칙으로 하며, 논문의 분량은 200자 원고지 120매 내외 또는 A4용지 20매 내외로 하며, 필요한 경우 원고지 150매 (A4용지 25매)를 초과할 수 있다.</p>
+            </div>
+          </div>
+
+          <div class="guideline">
+            <h4 class="guideline-title"><span class="num">2</span> 논문의 구성</h4>
+            <div class="guideline-content">
+              <p>논문의 구성은 ① 논문 제목, ② 저자 성명(각주에 소속과 직위), ③ 목차, ④ 본문, ⑤ 참고문헌, ⑥ 국문초록, ⑦ 국문주제어, ⑧ 외국어초록(필자의 외국어 성명과 성명 각주의 외국어 소속 및 직위 포함), ⑨ 외국어주제어의 순서로 작성한다.</p>
+              <p>(1) 외국어초록과 외국어주제어는 영어를 원칙으로 하되, 독일·불어 등도 사용할 수 있다.</p>
+              <p>(2) 국문주제어와 외국어주제어는 5개 이상이어야 한다.</p>
+            </div>
+          </div>
+
+          <div class="guideline">
+            <h4 class="guideline-title"><span class="num">3</span> 언어</h4>
+            <div class="guideline-content">
+              <p>논문은 국문, 국한문혼용, 외국문(영어, 독어, 일어, 프랑스어 등)으로 작성한다.</p>
+            </div>
+          </div>
+
+          <div class="guideline">
+            <h4 class="guideline-title"><span class="num">4</span> 본문의 구성</h4>
+            <div class="guideline-content">
+              <p>본문의 첫 페이지는 목차란과 서론부터 시작하여 모든 내용은 연속으로 기재한다. 그리고 각주의 첫 줄에는 필자의 소속기관과 직위를 기재한다.</p>
+            </div>
+          </div>
+
+          <div class="guideline">
+            <h4 class="guideline-title"><span class="num">5</span> 표와 그림의 표제 및 설명</h4>
+            <div class="guideline-content">
+              <p>표에는 그 상단에 표제를 쓰고 설명이 필요한 경우에는 그 하단에 기재하며, 그림에는 표제 및 설명을 그 하단에 기재한다.</p>
+            </div>
+          </div>
+
+          <div class="guideline">
+            <h4 class="guideline-title"><span class="num">6</span> 국·영문요약</h4>
+            <div class="guideline-content">
+              <p>국·영문요약은 A4용지 1장(주제어 포함 18줄) 이상을 넘지 않아야 하며, 국·영문요약 하단에 반드시 '주제어 (keyword)' 색인을 표기해야 한다.</p>
+            </div>
+          </div>
+
+          <div class="guideline">
+            <h4 class="guideline-title"><span class="num">7</span> 주작성</h4>
+            <div class="guideline-content">
+              <p>주작성은 본문주 사용을 원칙으로 한다.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 2: 논문의 체제 -->
+        <div class="chapter" id="chapter2">
+          <h3 class="chapter-title">Ⅱ. 논문의 체제</h3>
+
+          <div class="guideline">
+            <h4 class="guideline-title"><span class="num">1</span> 목차의 순서</h4>
+            <div class="guideline-content">
+              <p>논문 소제목의 표기는 아래와 같은 기준으로 작성한다.</p>
+              <div class="hierarchy">
+                <span class="hierarchy-item"><strong>1단계</strong> - Ⅰ. Ⅱ. Ⅲ.</span>
+                <span class="hierarchy-item"><strong>2단계</strong> - 1. 2. 3.</span>
+                <span class="hierarchy-item"><strong>3단계</strong> - (1) (2) (3)</span>
+                <span class="hierarchy-item"><strong>4단계</strong> - 1) 2) 3)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="guideline">
+            <h4 class="guideline-title"><span class="num">2</span> 인용표기</h4>
+            <div class="guideline-content">
+              <p>(1) 주석의 표기는 각주로 하며, 처음 인용할 경우의 각주는 다음과 같이 표기한다.</p>
+              
+              <div class="sub-guideline">
+                <div class="sub-guideline-title">1) 저서의 인용</div>
+                <div class="sub-guideline-content">
+                  <p>① 저서는 저자명, 서명, 출판사, 출판년도, 면수의 순으로 표시한다. 번역서의 경우 저자명을 원어로 표시하고, 저자명과 서명 사이에 번역자의 이름을 쓰고 '옮김'을 추가한다. 서명은 한글로 표시한다.</p>
+                  <div class="example-box">
+                    <span class="label">예시</span>
+                    <code>김숙명, 『청파법학』, 숙명여대 법학연구소, 2010, 29면.</code>
+                    <code>Jutta Limbach, 정남철 옮김, 『독일연방헌법재판소』, 고려대학교출판부, 2007, 117면.</code>
+                  </div>
+                  <p>② 공동저자의 출전은 주저자(책임연구자)와 공동저자를 구분하고, 주저자와 공동저자 순으로 기재하며, 저자명 사이에 '/'로 표시한다.</p>
+                  <div class="example-box">
+                    <span class="label">예시</span>
+                    <code>이욱한/성민섭, Nowak, J./Rotunda, R./Wong, J.N.</code>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sub-guideline">
+                <div class="sub-guideline-title">2) 정기간행물</div>
+                <div class="sub-guideline-content">
+                  <p>저자명, "논문제목", 잡지명, 권수·호수, 출판년도, 면수의 순으로 표시하되, 필요한 경우 잡지의 발행기관을 출판년도 앞에 표시할 수 있다.</p>
+                  <div class="example-box">
+                    <span class="label">예시</span>
+                    <code>이욱한, "차별금지와 실질적 평등권 - 양성평등을 중심으로 -", 『공법학연구』 제6권 제3호, 2005, 75면.</code>
+                    <code>Thompson L., "Family work: Women's sense of fairness." Journal of Family Issues 12. 1991, pp. 120~121.</code>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sub-guideline">
+                <div class="sub-guideline-title">3) 기념논문집</div>
+                <div class="sub-guideline-content">
+                  <p>저자명, 「논문제목」, 기념논문집명-○○○ 선생기념 논문집, 출판사, 출판년도, 면수의 순으로 표시한다.</p>
+                </div>
+              </div>
+
+              <div class="sub-guideline">
+                <div class="sub-guideline-title">4) 본인의 논문이나 저서 인용</div>
+                <div class="sub-guideline-content">
+                  <p>본인의 논문이나 저서를 인용할 경우에도 '졸고' 또는 '졸저' 대신에 본인의 이름을 그대로 표시한다.</p>
+                </div>
+              </div>
+
+              <div class="sub-guideline">
+                <div class="sub-guideline-title">5) 재인용의 경우</div>
+                <div class="sub-guideline-content">
+                  <p>① 동양서이든 서양서이든 관계없이 저자이름을 제외하고는 '앞의 글' 또는 '앞의 책'으로 표시한다.</p>
+                  <div class="example-box">
+                    <span class="label">예시</span>
+                    <code>Thompson, L., 앞의 글 (또는 앞의 책), 125면.</code>
+                  </div>
+                  <p>② 바로 앞의 각주에 인용된 저서나 논문 등을 다시 인용할 경우에는 '위의 글(또는 위의 책), 면수'로 표시한다.</p>
+                  <p>③ 하나의 각주에서 이미 인용한 논문이나 책을 다시 인용할 경우에는 '같은 글(또는 같은 책), 면수'로 표시한다.</p>
+                  <p>④ 동일 저자의 논문이나 책이 앞에서 두 번 이상 인용되었을 경우 그 중에서 어느 것을 인용하는지를 분명히 하기 위해서 필요한 경우 '앞의 글(또는 앞의 책)' 다음에 처음 인용했던 각주 번호를 기재해 준다.</p>
+                  <div class="example-box">
+                    <span class="label">예시</span>
+                    <code>김숙명, 앞의 책(주 15), 60면.</code>
+                  </div>
+                  <p>⑤ 외국논문의 경우 처음 인용한 잡지명을 약어로 표시한다.</p>
+                  <div class="example-box">
+                    <span class="label">예시</span>
+                    <code>California Law Review → Cal. L. Rev.</code>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sub-guideline">
+                <div class="sub-guideline-title">6) 판례인용</div>
+                <div class="sub-guideline-content">
+                  <p>판례인용은 다음과 같이 대법원과 헌법재판소의 양식에 준하여 작성한다.</p>
+                  <div class="example-box">
+                    <span class="label">국내 판례</span>
+                    <code>판결: 대법원 19OO. OO. OO. 선고 OO누OO 판결</code>
+                    <code>결정: 대법원 19OO. OO. OO. 자 OO두OO 결정</code>
+                    <code>결정: 헌재 19OO. OO. OO. OO헌가OO 결정</code>
+                  </div>
+                  <p>단, 외국의 판례를 인용할 경우에는 각국의 표준적인 판례 인용 예에 의한다.</p>
+                  <div class="example-box">
+                    <span class="label">외국 판례</span>
+                    <code>Branzburg v. Hayes, 408 U.S. 665, 667 (1972).</code>
+                    <code>BVerfGE 39, 390 (401f).</code>
+                  </div>
+                </div>
+              </div>
+
+              <p style="margin-top: 16px;">(2) 국문 또는 한자로 표시되는 저서는 『 』로 표시하고, 논문은 " "로 표시하며, 로마자로 표기되는 저서는 이탤릭체로 표시하고, 논문은 " "로 표시한다.</p>
+            </div>
+          </div>
+
+          <div class="guideline">
+            <h4 class="guideline-title"><span class="num">3</span> 참고문헌의 표기</h4>
+            <div class="guideline-content">
+              <p>참고문헌의 표기는 다음과 같은 기준에 따른다.</p>
+              
+              <p>(1) 참고문헌은 본문과 각주에서 언급된 것에 한해 표기한다. 본문과 각주에서 언급된 모든 문헌의 정보는 논문후단의 참고문헌에 명시한다.</p>
+              
+              <p>(2) 저자명, 서명(또는 논문제목), 출판사(또는 간행물명), 권(또는 Vol.), 년도 등의 사이에는 마침표를 찍는다. 출판사 소재도시와 출판사 이름 사이에 콜론(:)을 찍고 한 칸 띄어 쓴다.</p>
+              
+              <p>(3) 동일한 저자의 여러 문헌은 연도순으로 배치하며, 같은 해에 발행된 문헌이 둘 이상인 경우에는 글에서 언급된 순서에 따라 발행연도 뒤에 a, b, c를 첨가하여 구분한다.</p>
+              
+              <p>(4) 논문, 학위논문, 기사 등은 따옴표(" ")로, 저서는 이중꺾쇠(『 』)로 표시한다. 단행본·저널명과 쪽수 사이에는 쉼표로 구분한다.</p>
+
+              <div class="ref-type">
+                <div class="ref-type-title">단행본</div>
+                <div class="ref-type-content">
+                  <code>한국여성연구소. 『페미니즘연구』. 서울: 동녘, 2004.</code><br>
+                  <code>Geoffrey S. Trotier. "Law and Inequality". A Journal of Theory & Practice, 2002.</code>
+                </div>
+              </div>
+
+              <div class="ref-type">
+                <div class="ref-type-title">번역서</div>
+                <div class="ref-type-content">
+                  <code>제인 프리드먼. 2001. 『페미니즘』. 이박혜경역. 서울: 이후, 2002.</code><br>
+                  <code>Simone de Beauvoir. 1949. 『제2의 성』. 조홍식 역. 서울: 을유문화사, 1993.</code>
+                </div>
+              </div>
+
+              <div class="ref-type">
+                <div class="ref-type-title">정기간행물</div>
+                <div class="ref-type-content">
+                  <code>이욱한. "차별금지와 실질적 평등권-양성평등을 중심으로-". 『공법학연구』 제6권 제3호. 2005.</code><br>
+                  <code>Thompson, L. "Family work: Women's sense of fairness." Journal of Family Issues 12. 1991.</code>
+                </div>
+              </div>
+
+              <div class="ref-type">
+                <div class="ref-type-title">편저서</div>
+                <div class="ref-type-content">
+                  <code>이성은, "섹슈얼리티와 성문화". 『새여성학강의』, 한국여성연구소, 동녘, 2005.</code><br>
+                  <code>Bograd, M. "Feminist perspectives on wife abuse: An introduction" in K. Yllo & M. Bograd eds. Feminist perspectives on wife abuse. Newbury Park, CA: Sage, 1990.</code>
+                </div>
+              </div>
+
+              <div class="ref-type">
+                <div class="ref-type-title">학위논문</div>
+                <div class="ref-type-content">
+                  <code>김용화. "성 인지적 관점에서 바라본 성평등 실현에 관한 연구" 숙명여자대학교 박사학위논문. 2006.</code>
+                </div>
+              </div>
+
+              <div class="ref-type">
+                <div class="ref-type-title">신문</div>
+                <div class="ref-type-content">
+                  <code>Walker, L.A. 1993. "The battered woman." New York Times (July 23), 7.</code><br>
+                  <code>이지민, "싱글맘 절반이 빈곤층" 『여성신문』 (11월 4일), 2005. 9.</code>
+                </div>
+              </div>
+
+              <p style="margin-top: 16px;">(5) 인터넷자료는 제작자, 제작년도, 주제명, 웹주소, (검색일자) 순서로 표기한다.</p>
+              <div class="example-box">
+                <span class="label">예시</span>
+                <code>법제처, "종합법령정보", 2007, http://www.moleg.go.kr (검색일: 2007. 1. 30).</code>
+              </div>
+
+              <p>(6) 참고문헌은 국내문헌, 외국문헌(동양문헌, 서양문헌 순) 순서로 기재하고, 국내문헌은 가나다순으로, 서양문헌은 알파벳순으로 기재한다. 기타 외국문헌의 경우 그 나라의 표기 순서에 따른다.</p>
+            </div>
+          </div>
+
+          <div class="notice-box">
+            <strong>※ 참고사항</strong>
+            이상의 집필요령에 명시되지 않은 사항은 『청파법학』 편집위원회의 결정에 따라 수정·보완될 수 있다.
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
