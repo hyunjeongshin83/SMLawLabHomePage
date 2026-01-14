@@ -1,0 +1,92 @@
+<img style="position: absolute; left: 0px; top: 0px" border="0" alt="" src="/wiz/user/lawlab/images/main_img.jpg">
+<br>
+
+<img style="position: absolute; left: 72px; z-index: 18; top: 577px" border="0" alt="" src="/wiz/user/lawlab/images/tmplt/bn_bg.gif">
+<br>
+
+<a href="http://admission.sookmyung.ac.kr/" target="_blank"><img style="position: absolute; left: 111px; z-index: 19; top: 582px" border="0" alt="입학정보" src="/wiz/user/lawlab/images/tmplt/bn_01_01.gif"></a>
+<br>
+
+<a href="http://exchange.sookmyung.ac.kr/" target="_blank"><img style="position: absolute; left: 244px; z-index: 20; top: 582px" border="0" alt="국제교류팀" src="/wiz/user/lawlab/images/tmplt/bn_01_02.gif"></a>
+<br>
+
+<a href="http://lib.sookmyung.ac.kr/" target="_blank"><img style="position: absolute; left: 377px; z-index: 21; top: 582px" border="0" alt="중앙도서관" src="/wiz/user/lawlab/images/tmplt/bn_01_03.gif"></a>
+<br>
+
+<a href="http://info.sookmyung.ac.kr/" target="_blank"><img style="position: absolute; left: 510px; z-index: 22; top: 582px" border="0" alt="학사지원팀" src="/wiz/user/lawlab/images/tmplt/bn_01_04.gif"></a>
+<br>
+
+<a href="http://onestop.sookmyung.ac.kr/" target="_blank"><img style="position: absolute; left: 643px; z-index: 23; top: 582px" border="0" alt="장학팀" src="/wiz/user/lawlab/images/tmplt/bn_01_05.gif"></a>
+<br>
+
+<a href="http://welfare.sookmyung.ac.kr/" target="_blank"><img style="position: absolute; left: 776px; z-index: 24; top: 582px" border="0" alt="학생지원팀" src="/wiz/user/lawlab/images/tmplt/bn_01_06.gif"></a>
+<br>
+
+<a href="http://ccmail.sookmyung.ac.kr/" target="_blank"><img style="position: absolute; left: 511px; z-index: 14; top: 477px" border="0" alt="01웹메일" src="/wiz/user/lawlab/images/tmplt/bn_it_01.gif"></a>
+<br>
+
+<a href="http://portal.sookmyung.ac.kr/" target="_blank"><img style="position: absolute; left: 597px; z-index: 15; top: 477px; margin-left: 0px; margin-right: 0px;" border="0" alt="02숙명포털" src="/wiz/user/lawlab/images/tmplt/bn_it_02_2.gif" width="85" height="66"></a>
+<br>
+
+<a href="http://attend.sookmyung.ac.kr/" target="_blank"><img style="position: absolute; left: 683px; z-index: 15; top: 477px" border="0" alt="03전자출결" src="/wiz/user/lawlab/images/tmplt/bn_it_03.gif"></a>
+<br>
+
+<a href="http://snowboard.sookmyung.ac.kr/" target="_blank"><img style="position: absolute; left: 769px; z-index: 16; top: 477px; margin-left: 0px; margin-right: 0px;" border="0" alt="04Snowboard" src="/wiz/user/lawlab/images/tmplt/bn_it_04_1.gif" width="85" height="66"></a>
+<br>
+
+<a href="http://www.sookmyung.ac.kr/tel_email/tel_email_search.htm" target="_blank"><img style="position: absolute; left: 855px; z-index: 17; top: 477px" border="0" alt="05전화번호검색" src="/wiz/user/lawlab/images/tmplt/bn_it_05.gif"></a>
+<br>
+
+<img style="position: absolute; left: 72px; z-index: 10; top: 478px" border="0" alt="법학연구소" src="/wiz/user/lawlab/images/tmplt/intro_img.gif" 이미지="">
+<br>
+
+<img style="position: absolute; left: 176px; z-index: 10; top: 478px" border="0" alt="법학연구소" src="/wiz/user/lawlab/images/tmplt/intro_text.gif" 소개="">
+<br>
+
+<iframe id="Handle1" title="공지사항" style="height: 126px; position: absolute; left: 290px; z-index: 5; top: 332px; width: 308px" height="100%" marginheight="0" src="/wiz/contents/board/miniBoard.php?home_id=lawlab&amp;handle=1" frameborder="0" width="100%" allowtransparency="" name="board" marginwidth="0" scrolling="no"></iframe>
+<br>
+
+<img style="position: absolute; left: 282px; z-index: 4; top: 334px" border="0" alt="공지사항" src="/wiz/user/lawlab/images/tmplt/title_01.gif">
+<br>
+
+<img style="position: absolute; left: 623px; z-index: 4; top: 334px" border="0" alt="자유게시판" src="/wiz/user/lawlab/images/tmplt/title_02.gif">
+<br>
+
+<iframe id="Handle1" title="로그인" style="height: 142px; position: absolute; left: 64px; z-index: 3; top: 324px; width: 197px" height="100%" marginheight="0" src="/wiz/contents/login/login.php?home_id=lawlab&amp;handle=1" frameborder="0" width="100%" allowtransparency="" name="login" marginwidth="0" scrolling="no"></iframe>
+<br>
+
+<img style="position: absolute; left: 72px; z-index: 2; top: 329px" border="0" alt="MEMBERS LOGIN" src="/wiz/user/lawlab/images/tmplt/login.gif">
+<br>
+ 
+<br>
+
+<iframe id="Handle2" title="자유게시판" style="height: 128px; position: absolute; left: 631px; z-index: 6; top: 332px; width: 305px" height="100%" marginheight="0" src="/wiz/contents/board/miniBoard.php?home_id=lawlab&amp;handle=2" frameborder="0" width="100%" allowtransparency="" name="board" marginwidth="0" scrolling="no"></iframe>
+<br>
+
+<img style="position: absolute; left: 109px; z-index: 7; top: 325px" border="0" alt="MEMBERS LOGIN" src="/wiz/user/lawlab/images/tmplt/00_link.gif" width="112" height="19">
+<br>
+
+<img style="position: absolute; left: 283px; z-index: 8; top: 333px" border="0" alt="공지사항_notice board" src="/wiz/user/lawlab/images/tmplt/00_link.gif" width="172" height="23">
+<br>
+
+<img style="position: absolute; left: 623px; z-index: 9; top: 333px" border="0" alt="자유게시판_free board" src="/wiz/user/lawlab/images/tmplt/00_link.gif" width="172" height="23">
+<br>
+
+<table style="position: absolute; left: 184px; z-index: 11; top: 503px" height="51" cellspacing="0" cellpadding="3" width="201" border="0">
+	<tbody>
+		<tr>
+			<td height="45" valign="top" width="195" class="dext_table_border_t dext_table_border_r dext_table_border_b dext_table_border_l">
+				<font style="font-size: 8pt; color: #919191; line-height: 140%" face="돋움">2006년 지식법제연구소로 출범한 법학연구소는 21세기 급변하는 글로벌화ㆍ디지털화ㆍ지식산업화....</font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&amp;menu_seq=7&amp;menu_seq_open=" target="_parent"><img style="position: absolute; left: 321px; z-index: 12; top: 540px" border="0" alt="+더보기" src="/wiz/user/lawlab/images/tmplt/more.gif"></a>
+<br>
+
+<img style="position: absolute; left: 401px; z-index: 13; top: 471px" border="0" alt="IT서비스_숙명여대에서 제공하는 IT서비스입니다." src="/wiz/user/lawlab/images/tmplt/bn_it.gif">
+<br>
+
+<img style="position: absolute; left: 258px; z-index: 25; top: 40px" border="0" alt="법학연구소 홈페이지에 오신 것을 환영합니다." src="/wiz/user/lawlab/images/main_text.png">
+<br>

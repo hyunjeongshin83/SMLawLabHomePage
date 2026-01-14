@@ -1,0 +1,18 @@
+<iframe id="Handle1" title="메인 메뉴" style="left: 277px; width: 481px; position: absolute; top: 54px; height: 74px;" name="menu" marginwidth="0" marginheight="0" src="/wiz/contents/menu/menu.php?home_id=lawlab&amp;handle=1" frameborder="0" width="100%" scrolling="no" height="100%" allowtransparency=""></iframe>
+<br>
+
+<a href="http://www.sookmyung.ac.kr/" target="_blank">&nbsp;<br><img style="z-index: 2; left: 734px; position: absolute; top: 19px" alt="go_숙명여자대학교 바로가기" src="/wiz/user/lawlab/images/tmplt/top_01.gif" border="0"><br></a>
+<a href="/wiz/user/lawlab/" target="_parent"><img style="z-index: 3; left: 853px; position: absolute; top: 19px" alt="HOME" src="/wiz/user/lawlab/images/tmplt/top_02.gif" border="0"></a>
+<br>
+
+<a href="/wiz/wizard/frames/server_index.html?home_id=lawlab&amp;menu_seq=22&amp;menu_seq_open=" target="_parent"><img style="z-index: 4; left: 899px; position: absolute; top: 19px" alt="SITEMAP" src="/wiz/user/lawlab/images/tmplt/top_03.gif" border="0"></a>
+<br>
+
+<img style="z-index: 5; left: 949px; position: absolute; top: 19px" alt="EMAIL" src="/wiz/user/lawlab/images/tmplt/top_04.gif" border="0">
+<br>
+
+<a href="/wiz/user/lawlab/" target="_parent"><img style="z-index: 1; left: 0px; width: 210px; position: absolute; top: 0px; height: 52px" height="53" alt="법학연구소" src="/wiz/user/lawlab/images/tmplt/logo.gif" width="210" border="0"></a>
+<br>
+
+<br>
+<p><br></p>

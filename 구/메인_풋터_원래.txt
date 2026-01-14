@@ -1,0 +1,56 @@
+<a href="/wiz/wizard/frames/frame3_1.php?home_id=law&amp;top_page=top.html&amp;left_page=left.html&amp;right_page=menu05_01.html&amp;menu_seq=5&amp;menu_seq_open=#"><img style="position: absolute; left: 267px; z-index: 5; top: 11px" border="0" alt="이메일무단수집거부" src="/wiz/user/law/images/tmplt/bottom_pol_02.gif"></a>
+ 
+<a href="http://www.sookmyung.ac.kr/contents/contents.jsp?cmsCd=CM0230" target="_blank"><img style="position: absolute; left: 382px; z-index: 5; top: 11px" border="0" alt="숙명보안10계명" src="/wiz/user/law/images/tmplt/bottom_pol_03.gif"></a>
+ 
+<img style="position: absolute; left: 861px; z-index: 5; top: 15px" border="0" alt="세상을 바꾸는 부드러운 힘, 숙명" src="/wiz/user/law/images/tt_01.png">
+ 
+<a href="https://www.sookmyung.ac.kr/kr/information-use/privacy-policy.do" target="_blank"><img style="height: 16px; width: 68px; position: absolute; left: 177px; z-index: 5; top: 13px; margin: 0px;" border="0" alt="개인정보처리방침" src="/wiz/user/law/images/tmplt/bottom_pol_01.gif"></a>
+ 
+<img style="height: 91px; width: 1000px; position: absolute; left: 0px; z-index: 1; top: 4px" border="0" alt="" src="/wiz/user/law/images/bottom_bg.gif" width="1000" height="94">
+<br>
+
+<a href="/wiz/wizard/frames/frame3_1.php?home_id=law&amp;top_page=top.html&amp;left_page=left.html&amp;right_page=menu05_01.html&amp;menu_seq=5&amp;menu_seq_open=#"></a>
+ 
+<br>
+  
+<br>
+  
+<br>
+
+<table style="width: 800px; position: absolute; left: 216px; z-index: 5; top: 63px" height="19" cellspacing="0" cellpadding="3" width="800" border="0">
+	<tbody>
+		<tr>
+			<td style="height: 27px; width: 800px" height="27" valign="top" width="800" class="dext_table_border_t dext_table_border_r dext_table_border_b dext_table_border_l">
+				
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<font color="#999999" face="돋움">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img style="height: 48px; width: 142px; position: absolute; left: 39px; z-index: 5; top: 78px" border="0" alt="숙명여자대학교" src="/wiz/user/law/images/tmplt/bottom_logo.gif" width="136" height="53">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 04310 서울특별시 용산구 청파로47길 100 (청파동2가) 진리관 511호</font>
+    
+<br>
+
+<font color="#999999" face="돋움">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;숙명여자대학교&nbsp; 법학연구소 TEL : 02)2077-7359 
+<font color="#000000" face="굴림">&nbsp; </font><font style="font-size: 8pt; color: #999999; line-height: 120%" face="돋움">FAX : 02) 710-9838</font>
+ &nbsp;&nbsp;</font>
+  
+<br>
+
+<font color="#999999" face="돋움">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+         
+ 
+<span style="font-size: 8pt">COPYRIGHT ⓒ SOOKMYUNG WOMEN'S UNIVERSITY. ALL RIGHT RESERVED</span>
+ 
+<span style="font-size: 8pt">.</span>
+ 
+<br>
+                                            
+<br>
+ 
+<br>
+ 
+<br>
+
+<p><br></p>

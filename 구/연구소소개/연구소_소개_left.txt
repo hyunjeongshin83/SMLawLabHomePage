@@ -1,0 +1,48 @@
+<img style="left: 13px; position: absolute; top: 27px" alt="" src="/wiz/user/lawlab/images/tmplt/sub_img_01.gif" border="0">
+<br>
+
+<br>
+
+<iframe id="Handle1" title="서브메뉴" style="z-index: 1; left: 25px; width: 195px; position: absolute; top: 173px; height: 300px" name="submenu" marginwidth="0" marginheight="0" src="/wiz/contents/menu/submenu.php?home_id=lawlab&amp;handle=1" frameborder="0" width="100%" scrolling="no" height="100%" allowtransparency=""></iframe>
+
+<table style="z-index: 104; left: 5px; position: absolute; top: 608px" height="25" cellspacing="0" cellpadding="3" width="21" border="0">
+	<tbody>
+		<tr>
+			<td valign="top" width="15" height="19" class="dext_table_border_t dext_table_border_r dext_table_border_b dext_table_border_l">
+				<br>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<br>
+
+<table style="z-index: 105; left: 88px; position: absolute; top: 219px" height="25" cellspacing="0" cellpadding="3" width="8" border="0">
+	<tbody>
+		<tr>
+			<td valign="top" width="2" height="19" class="dext_table_border_t dext_table_border_r dext_table_border_b dext_table_border_l">
+				<script src="/wiz/js/scroll.js" type="test/javascript"></script>
+<div id="STATICMENU" style="z-index: 1; left: 885px; width: 89px; position: absolute; top: 0px; height: 35px">
+<table style="border-right: rgb(153,153,153) 0px solid; border-top: rgb(153,153,153) 0px solid; border-left: rgb(153,153,153) 0px solid; border-bottom: rgb(153,153,153) 0px solid" cellspacing="0" cellpadding="0" width="89">
+	<tbody>
+		<tr>
+			<td valign="top" width="79" class="dext_table_border_t dext_table_border_r dext_table_border_b dext_table_border_l">
+				<br>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" width="79" class="dext_table_border_t dext_table_border_r dext_table_border_b dext_table_border_l">
+				<a href="#"><img style="z-index: 106; position: absolute" alt="top" src="/wiz/user/lawlab/images/tmplt/top.gif" border="0"></a><br>
+<br>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div><script language="javascript">
+<!--
+InitializeStaticMenu(); // 스크롤메뉴를 가동하는 자바스크립트//-->
+</script>
+			</td>
+		</tr>
+	</tbody>
+</table>

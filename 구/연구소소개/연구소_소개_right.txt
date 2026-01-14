@@ -1,0 +1,250 @@
+<img style="position: absolute; left: 0px; z-index: 100; top: 27px" border="0" alt="" src="/wiz/user/lawlab/images/tmplt/sub_img.gif">
+<br>
+
+<img style="position: absolute; left: -58px; z-index: 105; top: 29px" border="0" alt="" src="/wiz/user/lawlab/images/sub_img.png">
+<br>
+
+<img style="position: absolute; left: 199px; z-index: 106; top: 42px; margin-left: 0px; margin-right: 0px;" border="0" alt="전인적품성과창의적지성을갖춘글로벌리더육성 세상을 바꾸는 부드러운 힘, 숙명" src="/wiz/user/lawlab/images/tmplt/sub_text_1.png" width="323" height="85">
+<br>
+
+<img style="position: absolute; left: 12px; z-index: 101; top: 173px" border="0" alt="" src="/wiz/user/lawlab/images/tmplt/sub_bar.gif">
+<br>
+
+<table style="position: absolute; left: 53px; z-index: 104; top: 185px" height="23" cellspacing="0" cellpadding="3" width="158" border="0">
+	<tbody>
+		<tr>
+			<td height="17" valign="top" width="152" class="dext_table_border_t dext_table_border_r dext_table_border_b dext_table_border_l">
+				<font style="font-size: 11pt; color: #5f5f5f; line-height: 120%" face="돋움">
+<strong>편집규정</strong>
+ </font>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table style="position: absolute; left: 300px; z-index: 105; top: 188px" height="19" cellspacing="0" cellpadding="3" width="417" border="0">
+	<tbody>
+		<tr>
+			<td height="13" valign="top" width="411" class="dext_table_border_t dext_table_border_r dext_table_border_b dext_table_border_l">
+				<p align="right">
+<font style="font-size: 8pt; color: #bdbdbd; line-height: 120%" face="돋움">
+<strong><img border="0" alt="HOME" src="/wiz/user/lawlab/images/tmplt/home.gif">HOME :: 학술지 청파법학&gt; 편집규정</strong>
+ </font>
+</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table style="position: absolute; left: 49px; z-index: 106; top: 252px" cellspacing="0" cellpadding="0" width="670" border="0">
+	<tbody>
+		<tr>
+			<td class="dext_table_border_t dext_table_border_r dext_table_border_b dext_table_border_l">
+				<span style="font-size: 12pt; color: #00008b">
+<strong>
+<span style="font-family: 돋움">제 1 조 (발행) </span>
+</strong>
+</span>
+<br>
+<span style="font-family: 돋움">이 규정은 숙명여자대학교 법학연구소 (이하‘ 법학연구소’라 한다)에서 발간하는 학술지를 편집⋅간행함에 필요한 사항을 정함을 목적으로 한다. </span>
+<br><br>
+<br>
+<span style="font-size: 12pt; color: #00008b">
+<strong>
+<span style="font-family: 돋움">제 2 조 (제호)</span>
+</strong>
+</span>
+<br>
+<span style="font-family: 돋움">학술지의 칭호는‘청파법학’이라 한다 . </span>
+<br><br>
+<br>
+<span style="font-size: 12pt">
+<span style="color: #00008b">
+<strong>
+<span style="font-family: 돋움">제 3 조 (발행시기)</span>
+</strong>
+</span>
+</span>
+<br>
+<span style="font-family: 돋움">‘ 청파법학 ’은 매년 1회 발간한다 . </span>
+<br><br>
+<br>
+<span style="font-size: 12pt">
+<strong>
+<span style="font-family: 돋움; color: #00008b">제 4 조 (논문의 요건 및 자격)</span>
+</strong>
+</span>
+<br>
+<span style="font-family: 돋움">(1) 본 학술지에 발표하는 논문은 법학분야와 관련된 문제 및 현안 등 다른 학술지 또는 간행물에 발표하지 않은 독창적인 학술 논문이어야 한다. </span>
+<br>
+<span style="font-family: 돋움">(2) 본 학술지에 논문을 투고하고자 하는 연구자는 박사과정 수료 이상의 자와 전공분야에서 3년 이상 연구경력이 있는 관련기관 근무자로 한다. </span>
+<br>
+<span style="font-family: 돋움">(3) 1본 학술지에 발표하는 논문은 반드시 본 학술지의 집필요령을 준수하여 작성하여야 한다. </span>
+<br><br>
+<br>
+<strong>
+<span style="font-size: 12pt; font-family: 돋움; color: #00008b">제 5 조 (논문의 투고 및 게재) </span>
+<br></strong>
+<span style="font-family: 돋움">(1) 논문은 한글로 써야하며 제출시에는 원본 디스켓 또는 E-mail로 제출한다. </span>
+<br>
+<span style="font-family: 돋움">(2) 모든 논문 투고자는 논문 제출과 동시에 논문심사비를 납부하여야 한다. </span>
+<br>
+<span style="font-family: 돋움">(3) 연구비 수혜 논문을 게재할 경우 저자는 게재료를 납부하여야 한다. </span>
+<br>
+<span style="font-family: 돋움">(4) 논문 저자가 별쇄본을 원하는 경우 별도의 비용을 지불하여야 한다. </span>
+<br>
+<span style="font-family: 돋움">(5) 게재될 논문 원고의 초교는 저자가 하여야 한다.</span>
+<br>
+<span style="font-family: 돋움">(6) 논문은 동일 저자가 동일호에 한편만 게재할 수 있다. </span>
+<br><br>
+<br>
+<span style="font-size: 12pt">
+<strong>
+<span style="font-family: 돋움; color: #00008b">제 6 조 (논문의 분량)</span>
+</strong>
+</span>
+<br>
+<span style="font-family: 돋움">[ 청파법학 ]에 발표하는 논문의 분량은 200자 원고지 120매 내외 또는 A4용지 20매로 하되, 필요한 경우 원고지 150매 (A4용지 25매)를 초과할 수 있다. </span>
+<br><br>
+<br>
+<strong>
+<span style="font-size: 12pt; font-family: 돋움; color: #00008b">제 7 조 (논문의 접수 및 심사시기)</span>
+<br></strong>
+<span style="font-family: 돋움; color: #000000">논</span>
+<span style="font-family: 돋움">문의 접수 및 심사는 연중 수시로 하되, 해당 호의 발간 시점까지 선착순으로 심사하여 최종적으로 게재 가능한 판정을 받은 논문을 게재한다. </span>
+<br><br>
+<br>
+<strong>
+<span style="font-size: 12pt; font-family: 돋움; color: #00008b">제 8 조 (편집위원회) </span>
+<br></strong>
+<span style="font-family: 돋움">(1) 본 편집위원회는 특성화센터장과 간사를 포함하여 11인 내외의 위원으로 구성한다. </span>
+<br>
+<span style="font-family: 돋움">(2) 편집위원장은 편집위원 중에서 법학연구소장이 임명한다. </span>
+<br>
+<span style="font-family: 돋움">(3) [ 청파법학 ] 편집위원회는 다음 사항을 심의한다. </span>
+<br>
+<span style="font-family: 돋움">&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span style="font-family: 돋움">① 편집 및 발간계획에 따른 사항 </span>
+<br>
+<span style="font-family: 돋움">&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span style="font-family: 돋움">② 논문 편집규정 및 심사규정 </span>
+<br>
+<span style="font-family: 돋움">&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span style="font-family: 돋움">③ 논문 심사 </span>
+<br>
+<span style="font-family: 돋움">(4) 본 편집위원회는 편집위원장 또는 편집위원 1/3 이상의 요청에 의하여 소집, 과반수이상의 출석으로 성립하며 온라인 회의도 동일한 효력을 지닌다. </span>
+<br><br>
+<br>
+<span style="font-size: 12pt">
+<span style="color: #00008b">
+<strong>
+<span style="font-family: 돋움">제 9 조 (편집위원)</span>
+</strong>
+</span>
+</span>
+<br>
+<span style="font-family: 돋움">(1) 편집위원은 위원회의 승인을 얻어 법학연구소장이 위촉한다. </span>
+<br>
+<span style="font-family: 돋움">(2) 편집위원은 법학 등 전공 관련 박사학위 소지자로서 전국 4년제 대학의 전임강사 이상, 또는 전공분야에서 3년 이상 연구경력이 있는 관련기관 근무자로 한다. </span>
+<br>
+<span style="font-family: 돋움">(3) 편집위원의 임기는 2년으로 하되 연임할 수 있다. </span>
+<br><br>
+<br>
+<span style="font-size: 12pt">
+<span style="color: #00008b">
+<strong>
+<span style="font-family: 돋움">제 10 조 (심사절차 및 심사위원 선정)</span>
+</strong>
+</span>
+</span>
+<br>
+<span style="font-family: 돋움">(1) 편집위원회는 투고된 논문의 주제영역과 형식요건을 검토한 후 접수여부를 결정한다. </span>
+<br>
+<span style="font-family: 돋움">(2) 접수된 논문의 심사를 위하여 편집위원회에서 심사위원을 선정한다. </span>
+<br>
+<span style="font-family: 돋움">(3) 심사위원은 논문별로 3인을 위촉한다. 단 학술회의를 거친 기획주제 논문의 경우는 심사 및 게재여부에 관해 편집위원회에서 결정한다. </span>
+<br><br>
+<br>
+<strong>
+<span style="font-size: 12pt; font-family: 돋움; color: #00008b">제 11 조 (심사기준 평가) </span>
+<br></strong>
+<span style="font-family: 돋움">(1) 연구주제 및 문제제기의 명료성 </span>
+<br>
+<span style="font-family: 돋움">(2) 학술적 수준과 독창성 </span>
+<br>
+<span style="font-family: 돋움">(3) 연구방법의 타당성 </span>
+<br>
+<span style="font-family: 돋움">(4) 논리전개의 적절성 </span>
+<br>
+<span style="font-family: 돋움">(5) 문장의 정확성과 각주의 활용 및 그 인용의 정확성 </span>
+<br>
+<span style="font-family: 돋움">(6) 논문의 학문적 기대효과 및 활용성&nbsp;</span>
+<br>
+<span style="font-family: 돋움">&nbsp;</span>
+<br>
+<br>
+<strong>
+<span style="font-size: 12pt; font-family: 돋움; color: #00008b">제 12 조 (심사판정) </span>
+<br></strong>
+<span style="font-family: 돋움">심사위원은 위 평가 내용을 종합하여 “게재 가” “수정 후 게재” “수정 후 재심” “게재 불가” 로 판정하며, 심사위원간의 심사의견이 상이할 때에는 다수의견에 의한다. </span>
+<br><br>
+<br>
+<span style="font-size: 12pt; color: #00008b">
+<strong>
+<span style="font-family: 돋움">제 13 조 (수정 및 이의신청) </span>
+</strong>
+</span>
+<br>
+<span style="font-family: 돋움">(1) 심사 판정결과“수정 후 게재”판정을 받은 논문에 대하여는 해당 심사보고서를 첨부하여 수정 및 보완을 요구할 수 있으며 수정을 요구 받은 투고자는 수정을 요구받은 날로부터 10일 이내에 논문을 수정하여 제출하여야 한다. </span>
+<br>
+<span style="font-family: 돋움">(2) 수정된 논문을 제출할 때에는 수정된 원고와 더불어 수정사항 및 수정하지 못한 사항들을 구체적으로 첨부해야 한다. 수정요구를 그대로 반영하지 못한 경우에는 그 이유를 명시해야 한다. </span>
+<br>
+<span style="font-family: 돋움">(3) 심사 판정 결과 “수정 후 게재 ”판정을 받고도 투고자가 정당한 사유 없이 기한 내에 논문을 제출하지 않고 응답이 없거나 거부할 경우 편집위원회는 게재요청을 철회한 것으로 판단한다. </span>
+<br>
+<span style="font-family: 돋움">(4) 심사 판정결과 “수정 후 재심 ”판정을 받은 논문은 원심사자들의 수정의견을 반영하여 수정한 다음, 그 수정본을 다시 제 4, 제 5의 2인의 심사자의 재심 판정에 따라 게재여부를 결정한다. </span>
+<br>
+<span style="font-family: 돋움">(5) 심사 판정결과 “게재 불가 ”로 판정된 논문은 게재하지 않으며 해당 심사보고서를 첨부하여 그 사실을 투고자에게 통보한다. 투고자는 동일논문으로 게재신청을 할 수 없으며 수정⋅보완된 논문인 경우 편집위원회의 심사를 거쳐 접수여부를 결정한다. </span>
+<br>
+<span style="font-family: 돋움">(6) 심사 판정결과에 이의가 있는 투고자는 본 편집위원회에 소명할 수 있으나 모든 심사에 대해서 명시적인 논거를 문서 등 자료를 갖추어 제시해야 이의신청이 가능하다. </span>
+<br>
+<span style="font-family: 돋움">(7) 편집위원회는 이의신청을 접수한 후 원심자의 등급판정이 부당한 이유에서 이루어졌다고 판단되는 경우 종합판정을 재고할 수 있다. </span>
+<br><br>
+<br>
+<strong>
+<span style="font-size: 12pt; font-family: 돋움; color: #00008b">제 14 조 (게재비) </span>
+<br></strong>
+<span style="font-family: 돋움">논문 등의 기고자에 대하여는 실비의 게재비를 징수할 수 있다. </span>
+<br><br>
+<br>
+<strong>
+<span style="font-size: 12pt; font-family: 돋움; color: #00008b">제 15 조 (저작권) </span>
+<br></strong>
+<span style="font-family: 돋움">① 학회지의 편자는 법학연구소의 명의로 한다. 다만 학회지의 내용에는 개별논문의 필자를 명시한다. </span>
+<br>
+<span style="font-family: 돋움">② 법학연구소는 학술지의 편집저작권을 보유한다. </span>
+<br>
+<span style="font-family: 돋움">③ 학술지에 수록된 개별논문에 대한 저작권 관련 민형사책임은 개별논문의 필자에게 속한다. </span>
+<br><br>
+<br>
+<strong>
+<span style="font-size: 12pt; font-family: 돋움; color: #00008b">제 16 조 (기타) </span>
+<br></strong>
+<span style="font-family: 돋움">그 외의 명시되지 않은 사안이 발생할 경우 편집위원회의 심의결정에 따른다.&nbsp;</span>
+<br>
+<span style="font-family: 돋움">&nbsp; </span>
+<br>
+<br>
+<strong>
+<span style="font-size: 12pt; font-family: 돋움; color: #00008b">부 칙</span>
+<br></strong>
+<span style="font-family: 돋움">본 간행규정은 2012년 5월 1일부터 효력을 지닌다.</span>
+<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="dext_table_border_t dext_table_border_r dext_table_border_b dext_table_border_l">
+				<p><br></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
